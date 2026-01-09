@@ -1,0 +1,5 @@
+# Robots.txt for Neoneo Bank
+User-agent: *
+Allow: /
+
+Sitemap: https://neoneobank.com/sitemap.xml

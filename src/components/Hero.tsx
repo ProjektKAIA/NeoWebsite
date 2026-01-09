@@ -24,14 +24,15 @@ export default function Hero() {
         </p>
 
         {/* iPhone Mockup */}
-        <div className="relative mx-auto max-w-sm">
+        <div className="relative mx-auto w-64 sm:w-72 md:w-80 lg:w-96">
           <Image
             src="/app-mockup.png"
-            alt="NeoNeo Bank App"
+            alt="NeoNeo Bank App - Banking, crypto, investments and payments in one app"
             width={400}
             height={800}
-            className="drop-shadow-2xl"
+            className="drop-shadow-2xl w-full h-auto"
             priority
+            sizes="(max-width: 640px) 256px, (max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
           />
         </div>
 
