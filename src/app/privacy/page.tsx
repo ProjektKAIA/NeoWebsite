@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { ArrowLeft } from "lucide-react";
+import LegalDisclaimer from "@/components/LegalDisclaimer";
 
 export default function PrivacyPage() {
   const { language } = useLanguage();
@@ -22,6 +23,8 @@ export default function PrivacyPage() {
         <h1 className="text-4xl font-bold text-gray-900 mb-8">
           {language === "de" ? "Datenschutzerklärung" : "Privacy Policy"}
         </h1>
+
+        <LegalDisclaimer />
 
         <div className="prose prose-lg max-w-none text-gray-600">
           {language === "de" ? (

@@ -4,7 +4,8 @@ import {
   FeatureHighlights,
   MainFeatures,
   CTA,
-  Footer
+  Footer,
+  CookieBanner
 } from "@/components";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <CTA />
       </main>
       <Footer />
+      <CookieBanner />
     </>
   );
 }

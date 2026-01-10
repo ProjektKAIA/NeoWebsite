@@ -4,3 +4,4 @@ export { default as FeatureHighlights } from './FeatureHighlights';
 export { default as MainFeatures } from './MainFeatures';
 export { default as CTA } from './CTA';
 export { default as Footer } from './Footer';
+export { default as CookieBanner } from './CookieBanner';
