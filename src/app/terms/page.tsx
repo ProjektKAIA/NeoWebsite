@@ -48,7 +48,7 @@ export default function TermsPage() {
                   London, N1 7GU<br />
                   United Kingdom<br /><br />
                   Company Number: 16121231<br />
-                  E-Mail: contact@neoneobank.de
+                  E-Mail: hello@neoneobank.de
                 </p>
               </section>
 
@@ -155,7 +155,7 @@ export default function TermsPage() {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">13. Kontakt</h2>
                 <p className="mb-4">
                   Bei Fragen zu diesen AGB wenden Sie sich bitte an:<br />
-                  E-Mail: contact@neoneobank.de
+                  E-Mail: hello@neoneobank.de
                 </p>
               </section>
             </>
@@ -180,7 +180,7 @@ export default function TermsPage() {
                   London, N1 7GU<br />
                   United Kingdom<br /><br />
                   Company Number: 16121231<br />
-                  Email: contact@neoneobank.de
+                  Email: hello@neoneobank.de
                 </p>
               </section>
 
@@ -287,7 +287,7 @@ export default function TermsPage() {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">13. Contact</h2>
                 <p className="mb-4">
                   If you have any questions about these Terms, please contact us at:<br />
-                  Email: contact@neoneobank.de
+                  Email: hello@neoneobank.de
                 </p>
               </section>
             </>

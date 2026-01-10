@@ -69,7 +69,7 @@ export default function PrivacyPage() {
                 </p>
                 <p className="mb-4">
                   <strong>Vertreten durch:</strong> Paul Kappel (CEO)<br />
-                  <strong>E-Mail:</strong> contact@neoneobank.de
+                  <strong>E-Mail:</strong> hello@neoneobank.de
                 </p>
                 <p className="mb-4">
                   Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.
@@ -203,7 +203,7 @@ export default function PrivacyPage() {
                 </p>
                 <p className="mb-4">
                   <strong>Represented by:</strong> Paul Kappel (CEO)<br />
-                  <strong>Email:</strong> contact@neoneobank.de
+                  <strong>Email:</strong> hello@neoneobank.de
                 </p>
                 <p className="mb-4">
                   The responsible party is the natural or legal person who, alone or jointly with others, decides on the purposes and means of processing personal data (e.g., names, email addresses, etc.).

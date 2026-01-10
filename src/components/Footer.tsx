@@ -90,14 +90,14 @@ export default function Footer() {
             {/* Contact Email */}
             <div className="flex gap-4">
               <a
-                href="mailto:contact@neoneobank.de"
+                href="mailto:hello@neoneobank.de"
                 className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <rect x="2" y="4" width="20" height="16" rx="2"/>
                   <path d="M22 6L12 13L2 6"/>
                 </svg>
-                <span className="text-sm">contact@neoneobank.de</span>
+                <span className="text-sm">hello@neoneobank.de</span>
               </a>
             </div>
           </div>

@@ -57,7 +57,7 @@ export default function ImprintPage() {
 
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Kontakt</h2>
-                <p className="mb-2"><strong>E-Mail:</strong> contact@neoneobank.de</p>
+                <p className="mb-2"><strong>E-Mail:</strong> hello@neoneobank.de</p>
                 <p className="mb-2"><strong>Telegram:</strong> @neoneobank</p>
               </section>
 
@@ -159,7 +159,7 @@ export default function ImprintPage() {
 
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact</h2>
-                <p className="mb-2"><strong>Email:</strong> contact@neoneobank.de</p>
+                <p className="mb-2"><strong>Email:</strong> hello@neoneobank.de</p>
                 <p className="mb-2"><strong>Telegram:</strong> @neoneobank</p>
               </section>
 

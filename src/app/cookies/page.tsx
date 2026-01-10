@@ -144,7 +144,7 @@ export default function CookiesPage() {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Kontakt</h2>
                 <p className="mb-4">
                   Wenn Sie Fragen zu unserer Verwendung von Cookies haben, kontaktieren Sie uns bitte unter:<br />
-                  E-Mail: contact@neoneobank.de
+                  E-Mail: hello@neoneobank.de
                 </p>
               </section>
             </>
@@ -265,7 +265,7 @@ export default function CookiesPage() {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact</h2>
                 <p className="mb-4">
                   If you have any questions about our use of cookies, please contact us at:<br />
-                  Email: contact@neoneobank.de
+                  Email: hello@neoneobank.de
                 </p>
               </section>
             </>
