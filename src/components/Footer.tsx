@@ -28,7 +28,7 @@ function RingLogo({ className = "w-8 h-8" }: { className?: string }) {
 }
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const legalLinks = [
@@ -60,70 +60,44 @@ export default function Footer() {
               {t("footer.description")}
             </p>
 
-            {/* App Store Buttons */}
-            <div className="flex flex-wrap gap-3 mb-8">
-              <a
-                href="#"
-                className="flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors px-4 py-2 rounded-lg"
-              >
-                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                </svg>
-                <div className="text-left">
-                  <p className="text-[9px] opacity-70">{t("footer.downloadOn")}</p>
-                  <p className="text-sm font-semibold -mt-0.5">App Store</p>
+            {/* App Store Buttons - Coming Soon 2026 */}
+            <div className="mb-8">
+              <p className="text-sm text-primary font-medium mb-3">
+                {language === "de" ? "Bald verfügbar 2026" : "Coming Soon 2026"}
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg opacity-60 cursor-not-allowed">
+                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                  </svg>
+                  <div className="text-left">
+                    <p className="text-[9px] opacity-70">{t("footer.downloadOn")}</p>
+                    <p className="text-sm font-semibold -mt-0.5">App Store</p>
+                  </div>
                 </div>
-              </a>
-              <a
-                href="#"
-                className="flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors px-4 py-2 rounded-lg"
-              >
-                <svg className="w-5 h-5" viewBox="0 0 24 24">
-                  <path fill="#EA4335" d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92z"/>
-                  <path fill="#FBBC04" d="M17.556 8.235L14.85 9.806 13.792 12l1.058 2.194 2.706 1.571L21.17 13.5c.732-.423.732-1.577 0-2l-3.614-2.265z"/>
-                  <path fill="#4285F4" d="M3.609 1.814L13.792 12l1.058-2.194-5.464-9.09a1 1 0 0 0-.864-.498c-.186 0-.372.052-.534.154l-4.379 1.442z"/>
-                  <path fill="#34A853" d="M13.792 12l-1.058 2.194 5.464 9.09a.999.999 0 0 0 1.398.344l4.379-1.442-6.627-7.992L13.792 12z"/>
-                </svg>
-                <div className="text-left">
-                  <p className="text-[9px] opacity-70">{t("footer.getItOn")}</p>
-                  <p className="text-sm font-semibold -mt-0.5">Google Play</p>
+                <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg opacity-60 cursor-not-allowed">
+                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3.18 2.94L13.5 12 3.18 21.06c-.2-.37-.18-.78-.18-1.2V4.14c0-.42-.02-.83.18-1.2zm1.3-1.35l11.23 6.4-2.38 2.13L4.48 1.59zm0 20.82l8.85-8.53 2.38 2.13-11.23 6.4zm14.08-9.08l-2.58-1.47-2.6 2.33 2.6 2.33 2.58-1.47c.7-.4.7-1.32 0-1.72z"/>
+                  </svg>
+                  <div className="text-left">
+                    <p className="text-[9px] opacity-70">{t("footer.getItOn")}</p>
+                    <p className="text-sm font-semibold -mt-0.5">Google Play</p>
+                  </div>
                 </div>
-              </a>
+              </div>
             </div>
 
-            {/* Social Links */}
+            {/* Contact Email */}
             <div className="flex gap-4">
               <a
-                href="https://t.me/neoneobank"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center"
-                aria-label="Telegram"
-              >
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                </svg>
-              </a>
-              <a
                 href="mailto:contact@neoneobank.de"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center"
-                aria-label="Email"
+                className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <rect x="2" y="4" width="20" height="16" rx="2"/>
                   <path d="M22 6L12 13L2 6"/>
                 </svg>
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center"
-                aria-label="LinkedIn"
-              >
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
+                <span className="text-sm">contact@neoneobank.de</span>
               </a>
             </div>
           </div>
@@ -167,7 +141,7 @@ export default function Footer() {
       {/* Company Details Bar */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-6 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm text-gray-400">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-400">
 
             {/* Registered Company */}
             <div>
@@ -183,13 +157,6 @@ export default function Footer() {
               <p>20 Wenlock Road</p>
               <p>London, N1 7GU</p>
               <p>United Kingdom</p>
-            </div>
-
-            {/* CEO */}
-            <div>
-              <p className="font-medium text-gray-300 mb-2">{t("footer.management")}</p>
-              <p>CEO: Paul Kappel</p>
-              <p>contact@neoneobank.de</p>
             </div>
           </div>
         </div>
