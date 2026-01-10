@@ -86,7 +86,24 @@ const translations: Record<Language, Record<string, string>> = {
     "cta.button": "Contact us",
 
     // Footer
-    "footer.copyright": "Neoneo Bank",
+    "footer.description": "The next-generation mobile bank for modern life. Banking, crypto, investments and payments — all in one beautifully simple app.",
+    "footer.downloadOn": "Download on the",
+    "footer.getItOn": "GET IT ON",
+    "footer.product": "Product",
+    "footer.features": "Features",
+    "footer.about": "About Us",
+    "footer.support": "Support",
+    "footer.legal": "Legal",
+    "footer.privacy": "Privacy Policy",
+    "footer.terms": "Terms of Service",
+    "footer.imprint": "Imprint",
+    "footer.cookies": "Cookie Policy",
+    "footer.registeredCompany": "Registered Company",
+    "footer.registeredIn": "Registered in England & Wales",
+    "footer.registeredOffice": "Registered Office",
+    "footer.management": "Management",
+    "footer.allRights": "All rights reserved.",
+    "footer.regulated": "UK Registered Company",
   },
   de: {
     // Header
@@ -163,7 +180,24 @@ const translations: Record<Language, Record<string, string>> = {
     "cta.button": "Kontaktieren Sie uns",
 
     // Footer
-    "footer.copyright": "Neoneo Bank",
+    "footer.description": "Die mobile Bank der nächsten Generation für modernes Leben. Banking, Krypto, Investments und Zahlungen — alles in einer wunderschön einfachen App.",
+    "footer.downloadOn": "Laden im",
+    "footer.getItOn": "JETZT BEI",
+    "footer.product": "Produkt",
+    "footer.features": "Funktionen",
+    "footer.about": "Über uns",
+    "footer.support": "Support",
+    "footer.legal": "Rechtliches",
+    "footer.privacy": "Datenschutz",
+    "footer.terms": "AGB",
+    "footer.imprint": "Impressum",
+    "footer.cookies": "Cookie-Richtlinie",
+    "footer.registeredCompany": "Registrierte Firma",
+    "footer.registeredIn": "Registriert in England & Wales",
+    "footer.registeredOffice": "Firmensitz",
+    "footer.management": "Geschäftsführung",
+    "footer.allRights": "Alle Rechte vorbehalten.",
+    "footer.regulated": "UK Registriertes Unternehmen",
   },
 };
 
