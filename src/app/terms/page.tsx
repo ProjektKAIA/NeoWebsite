@@ -293,7 +293,7 @@ export default function TermsPage() {
 
         {/* Last Updated */}
         <p className="text-gray-400 text-sm mt-12">
-          {language === "de" ? "Zuletzt aktualisiert: Januar 2025" : "Last updated: January 2025"}
+          {language === "de" ? "Zuletzt aktualisiert: Januar 2026" : "Last updated: January 2026"}
         </p>
       </div>
     </div>
