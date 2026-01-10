@@ -39,14 +39,14 @@ export default function FeatureHighlights() {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="about" className="py-12 md:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 lg:gap-x-16 gap-y-6 md:gap-y-10">
           {highlights.map((feature, index) => (
             <div
               key={index}
-              className={`flex items-start gap-4 ${feature.isHighlighted ? 'bg-primary/5 p-4 rounded-xl -m-4' : ''}`}
+              className={`flex items-start gap-3 md:gap-4 ${feature.isHighlighted ? 'bg-primary/5 p-4 rounded-xl' : ''}`}
             >
               {/* Icon */}
               <div className={`flex-shrink-0 w-6 h-6 mt-0.5 ${feature.isHighlighted ? 'text-primary' : 'text-primary'}`}>
@@ -59,11 +59,11 @@ export default function FeatureHighlights() {
 
               {/* Content */}
               <div>
-                <h3 className={`text-xl font-semibold mb-1 ${feature.isHighlighted ? 'text-primary' : 'text-gray-900'}`}>
+                <h3 className={`text-lg md:text-xl font-semibold mb-1 ${feature.isHighlighted ? 'text-primary' : 'text-gray-900'}`}>
                   {feature.isHighlighted && <span className="text-primary">+ </span>}
                   {t(feature.titleKey)}
                 </h3>
-                <p className="text-gray-500">
+                <p className="text-gray-500 text-sm md:text-base">
                   {t(feature.descKey)}
                 </p>
               </div>

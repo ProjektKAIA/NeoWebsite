@@ -53,42 +53,42 @@ export default function MainFeatures() {
   ];
 
   return (
-    <section id="features" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="features" className="py-12 md:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <p className="section-label mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <p className="section-label mb-3 md:mb-4 text-xs md:text-sm">
             {t("features.label")}
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-gray-900">
             {t("features.title")}
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+          <p className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base md:text-lg px-4">
             {t("features.desc")}
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <div
                 key={index}
-                className={`card p-6 ${feature.isHighlighted ? 'bg-primary/5 border-primary/20' : ''}`}
+                className={`card p-4 md:p-6 ${feature.isHighlighted ? 'bg-primary/5 border-primary/20' : ''}`}
               >
                 {/* Icon */}
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${feature.isHighlighted ? 'bg-primary/20' : 'bg-primary/10'}`}>
-                  <Icon className={`w-6 h-6 ${feature.isHighlighted ? 'text-primary' : 'text-primary'}`} />
+                <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-3 md:mb-4 ${feature.isHighlighted ? 'bg-primary/20' : 'bg-primary/10'}`}>
+                  <Icon className={`w-5 h-5 md:w-6 md:h-6 ${feature.isHighlighted ? 'text-primary' : 'text-primary'}`} />
                 </div>
 
                 {/* Title */}
-                <h3 className={`text-lg font-semibold mb-2 whitespace-pre-line leading-tight ${feature.isHighlighted ? 'text-primary' : 'text-gray-900'}`}>
+                <h3 className={`text-base md:text-lg font-semibold mb-1 md:mb-2 whitespace-pre-line leading-tight ${feature.isHighlighted ? 'text-primary' : 'text-gray-900'}`}>
                   {t(feature.titleKey)}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 text-xs md:text-sm">
                   {t(feature.descKey)}
                 </p>
               </div>

@@ -76,19 +76,19 @@ interface PartnerCardProps {
 
 function PartnerCard({ logo, name, description, features }: PartnerCardProps) {
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
-      <div className="h-12 flex items-center text-gray-800 mb-6">
+    <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
+      <div className="h-10 md:h-12 flex items-center text-gray-800 mb-4 md:mb-6">
         {logo}
       </div>
-      <h3 className="text-xl font-semibold text-gray-900 mb-3">{name}</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">{name}</h3>
       <p className="text-gray-600 mb-4 text-sm leading-relaxed">{description}</p>
       <ul className="space-y-2">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-center gap-2 text-sm text-gray-500">
-            <svg className="w-4 h-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <li key={index} className="flex items-start gap-2 text-sm text-gray-500">
+            <svg className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
-            {feature}
+            <span>{feature}</span>
           </li>
         ))}
       </ul>
@@ -136,67 +136,63 @@ export default function TechPartners() {
   ];
 
   return (
-    <section className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-16 md:py-24 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold tracking-wide mb-4">
+        <div className="text-center mb-12 md:mb-16">
+          <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-xs sm:text-sm font-semibold tracking-wide mb-4">
             {t("partners.label")}
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
             {t("partners.title")}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             {t("partners.subtitle")}
           </p>
         </div>
 
         {/* Partner Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
           {partners.map((partner, index) => (
             <PartnerCard key={index} {...partner} />
           ))}
         </div>
 
         {/* Architecture Diagram */}
-        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100">
-          <h3 className="text-2xl font-semibold text-gray-900 text-center mb-10">
+        <div className="bg-white rounded-2xl p-6 md:p-12 shadow-sm border border-gray-100">
+          <h3 className="text-xl md:text-2xl font-semibold text-gray-900 text-center mb-6 md:mb-10">
             {t("partners.architecture")}
           </h3>
 
           <div className="max-w-4xl mx-auto">
             {/* NeoNeo Bank App Layer */}
-            <div className="bg-gradient-to-r from-primary to-primary/80 rounded-2xl p-6 text-white text-center mb-6">
-              <div className="text-lg font-semibold mb-2">NeoNeo Bank App</div>
-              <div className="flex flex-wrap justify-center gap-4 text-sm opacity-90">
-                <span className="bg-white/20 px-3 py-1 rounded-full">{t("partners.arch.banking")}</span>
-                <span className="bg-white/20 px-3 py-1 rounded-full">{t("partners.arch.crypto")}</span>
-                <span className="bg-white/20 px-3 py-1 rounded-full">{t("partners.arch.investments")}</span>
-                <span className="bg-white/20 px-3 py-1 rounded-full">{t("partners.arch.payments")}</span>
+            <div className="bg-gradient-to-r from-primary to-primary/80 rounded-xl md:rounded-2xl p-4 md:p-6 text-white text-center mb-4 md:mb-6">
+              <div className="text-base md:text-lg font-semibold mb-2">NeoNeo Bank App</div>
+              <div className="flex flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-sm opacity-90">
+                <span className="bg-white/20 px-2 md:px-3 py-1 rounded-full">{t("partners.arch.banking")}</span>
+                <span className="bg-white/20 px-2 md:px-3 py-1 rounded-full">{t("partners.arch.crypto")}</span>
+                <span className="bg-white/20 px-2 md:px-3 py-1 rounded-full">{t("partners.arch.investments")}</span>
+                <span className="bg-white/20 px-2 md:px-3 py-1 rounded-full">{t("partners.arch.payments")}</span>
               </div>
             </div>
 
             {/* Connection Lines */}
-            <div className="flex justify-center mb-6">
-              <div className="flex items-center gap-2">
-                <div className="w-px h-8 bg-gray-300"></div>
-                <div className="w-px h-8 bg-gray-300 mx-8"></div>
-                <div className="w-px h-8 bg-gray-300"></div>
-              </div>
+            <div className="flex justify-center mb-4 md:mb-6">
+              <div className="w-px h-6 md:h-8 bg-gray-300"></div>
             </div>
 
             {/* API Layer */}
-            <div className="grid md:grid-cols-3 gap-4">
-              <div className="bg-gray-100 rounded-xl p-5 text-center border-2 border-transparent hover:border-primary/30 transition-colors">
-                <div className="text-gray-800 font-semibold mb-2">Nium API</div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+              <div className="bg-gray-100 rounded-xl p-4 md:p-5 text-center border-2 border-transparent hover:border-primary/30 transition-colors">
+                <div className="text-gray-800 font-semibold mb-1 md:mb-2 text-sm md:text-base">Nium API</div>
                 <div className="text-xs text-gray-500">{t("partners.arch.niumApi")}</div>
               </div>
-              <div className="bg-gray-100 rounded-xl p-5 text-center border-2 border-transparent hover:border-primary/30 transition-colors">
-                <div className="text-gray-800 font-semibold mb-2">Kraken API</div>
+              <div className="bg-gray-100 rounded-xl p-4 md:p-5 text-center border-2 border-transparent hover:border-primary/30 transition-colors">
+                <div className="text-gray-800 font-semibold mb-1 md:mb-2 text-sm md:text-base">Kraken API</div>
                 <div className="text-xs text-gray-500">{t("partners.arch.krakenApi")}</div>
               </div>
-              <div className="bg-gray-100 rounded-xl p-5 text-center border-2 border-transparent hover:border-primary/30 transition-colors">
-                <div className="text-gray-800 font-semibold mb-2">Twelve Data API</div>
+              <div className="bg-gray-100 rounded-xl p-4 md:p-5 text-center border-2 border-transparent hover:border-primary/30 transition-colors">
+                <div className="text-gray-800 font-semibold mb-1 md:mb-2 text-sm md:text-base">Twelve Data API</div>
                 <div className="text-xs text-gray-500">{t("partners.arch.twelvedataApi")}</div>
               </div>
             </div>
@@ -204,13 +200,13 @@ export default function TechPartners() {
         </div>
 
         {/* Payment Networks */}
-        <div className="mt-16 text-center">
-          <p className="text-sm text-gray-500 mb-6">{t("partners.networks")}</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            <VisaLogo className="h-8" />
-            <MastercardLogo className="h-10" />
-            <SepaLogo className="h-8" />
-            <div className="text-gray-400 font-semibold text-lg">SWIFT</div>
+        <div className="mt-10 md:mt-16 text-center">
+          <p className="text-xs md:text-sm text-gray-500 mb-4 md:mb-6">{t("partners.networks")}</p>
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 opacity-60">
+            <VisaLogo className="h-6 md:h-8" />
+            <MastercardLogo className="h-8 md:h-10" />
+            <SepaLogo className="h-6 md:h-8" />
+            <div className="text-gray-400 font-semibold text-base md:text-lg">SWIFT</div>
           </div>
         </div>
       </div>

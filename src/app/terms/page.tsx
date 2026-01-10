@@ -9,18 +9,18 @@ export default function TermsPage() {
   const { language } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-white pt-24 pb-16">
-      <div className="max-w-4xl mx-auto px-6">
+    <div className="min-h-screen bg-white pt-20 md:pt-24 pb-12 md:pb-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Back Link */}
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors mb-6 md:mb-8 text-sm md:text-base"
         >
-          <ArrowLeft size={20} />
+          <ArrowLeft size={18} className="md:w-5 md:h-5" />
           <span>{language === "de" ? "Zurück zur Startseite" : "Back to Home"}</span>
         </Link>
 
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 md:mb-8">
           {language === "de" ? "Allgemeine Geschäftsbedingungen" : "Terms of Service"}
         </h1>
 

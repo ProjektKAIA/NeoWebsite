@@ -47,8 +47,8 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
 
           {/* Company Info */}
           <div className="lg:col-span-2">
@@ -140,8 +140,8 @@ export default function Footer() {
 
       {/* Company Details Bar */}
       <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-6 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-400">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 md:py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-sm text-gray-400">
 
             {/* Registered Company */}
             <div>
@@ -164,14 +164,14 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-6 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 md:py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
+            <p className="text-gray-500 text-xs md:text-sm text-center md:text-left">
               © {currentYear} LUNA LTD trading as Neoneo Bank. {t("footer.allRights")}
             </p>
-            <div className="flex items-center gap-6 text-sm text-gray-500">
+            <div className="flex items-center gap-4 md:gap-6 text-xs md:text-sm text-gray-500">
               <span className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-green-500" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-3 h-3 md:w-4 md:h-4 text-green-500" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-11v6h2v-6h-2zm0-4v2h2V7h-2z"/>
                 </svg>
                 {t("footer.regulated")}
