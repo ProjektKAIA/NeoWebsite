@@ -3,6 +3,7 @@ import {
   Hero,
   FeatureHighlights,
   MainFeatures,
+  TechPartners,
   CTA,
   Footer,
   CookieBanner
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <FeatureHighlights />
         <MainFeatures />
+        <TechPartners />
         <CTA />
       </main>
       <Footer />

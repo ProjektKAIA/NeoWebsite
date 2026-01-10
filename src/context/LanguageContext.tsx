@@ -104,6 +104,40 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.management": "Management",
     "footer.allRights": "All rights reserved.",
     "footer.regulated": "UK Registered Company",
+
+    // Tech Partners
+    "partners.label": "POWERED BY INDUSTRY LEADERS",
+    "partners.title": "Enterprise-Grade Infrastructure",
+    "partners.subtitle": "We partner with world-class technology providers to deliver secure, reliable, and scalable financial services.",
+    "partners.architecture": "Our Technology Stack",
+
+    "partners.nium.desc": "Global banking infrastructure powering payments in 190+ countries with real-time settlement capabilities.",
+    "partners.nium.feature1": "Instant IBAN & Multi-Currency Accounts",
+    "partners.nium.feature2": "SEPA & SWIFT Transfers",
+    "partners.nium.feature3": "Virtual & Physical Card Issuance",
+    "partners.nium.feature4": "Real-time FX in 100+ Markets",
+
+    "partners.kraken.desc": "Industry-leading crypto exchange providing secure digital asset trading and custody solutions.",
+    "partners.kraken.feature1": "400+ Cryptocurrencies",
+    "partners.kraken.feature2": "Fiat On/Off Ramp",
+    "partners.kraken.feature3": "Institutional-Grade Security",
+    "partners.kraken.feature4": "24/7 Trading & Staking",
+
+    "partners.twelvedata.desc": "Professional-grade financial market data covering global stocks, forex, crypto, and more.",
+    "partners.twelvedata.feature1": "160,000+ Stock Symbols",
+    "partners.twelvedata.feature2": "Real-time WebSocket Streaming",
+    "partners.twelvedata.feature3": "25,000+ ETFs & Funds",
+    "partners.twelvedata.feature4": "99.95% Uptime SLA",
+
+    "partners.arch.banking": "Banking",
+    "partners.arch.crypto": "Crypto",
+    "partners.arch.investments": "Investments",
+    "partners.arch.payments": "Payments",
+    "partners.arch.niumApi": "IBAN, Cards, Payments",
+    "partners.arch.krakenApi": "Crypto Trading & Custody",
+    "partners.arch.twelvedataApi": "Market Data & Analytics",
+
+    "partners.networks": "Connected to Global Payment Networks",
   },
   de: {
     // Header
@@ -198,6 +232,40 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.management": "Geschäftsführung",
     "footer.allRights": "Alle Rechte vorbehalten.",
     "footer.regulated": "UK Registriertes Unternehmen",
+
+    // Tech Partners
+    "partners.label": "POWERED BY BRANCHENFÜHRERN",
+    "partners.title": "Enterprise-Grade Infrastruktur",
+    "partners.subtitle": "Wir arbeiten mit erstklassigen Technologieanbietern zusammen, um sichere, zuverlässige und skalierbare Finanzdienstleistungen anzubieten.",
+    "partners.architecture": "Unsere Technologie-Architektur",
+
+    "partners.nium.desc": "Globale Banking-Infrastruktur für Zahlungen in 190+ Ländern mit Echtzeit-Abwicklung.",
+    "partners.nium.feature1": "Sofortige IBAN & Multi-Währungs-Konten",
+    "partners.nium.feature2": "SEPA & SWIFT Überweisungen",
+    "partners.nium.feature3": "Virtuelle & physische Kartenausgabe",
+    "partners.nium.feature4": "Echtzeit-FX in 100+ Märkten",
+
+    "partners.kraken.desc": "Branchenführende Krypto-Börse mit sicheren Digital-Asset-Trading und Verwahrungslösungen.",
+    "partners.kraken.feature1": "400+ Kryptowährungen",
+    "partners.kraken.feature2": "Fiat Ein-/Auszahlung",
+    "partners.kraken.feature3": "Institutionelle Sicherheit",
+    "partners.kraken.feature4": "24/7 Trading & Staking",
+
+    "partners.twelvedata.desc": "Professionelle Finanzmarktdaten für globale Aktien, Forex, Krypto und mehr.",
+    "partners.twelvedata.feature1": "160.000+ Aktien-Symbole",
+    "partners.twelvedata.feature2": "Echtzeit WebSocket-Streaming",
+    "partners.twelvedata.feature3": "25.000+ ETFs & Fonds",
+    "partners.twelvedata.feature4": "99,95% Uptime SLA",
+
+    "partners.arch.banking": "Banking",
+    "partners.arch.crypto": "Krypto",
+    "partners.arch.investments": "Investments",
+    "partners.arch.payments": "Zahlungen",
+    "partners.arch.niumApi": "IBAN, Karten, Zahlungen",
+    "partners.arch.krakenApi": "Krypto-Trading & Verwahrung",
+    "partners.arch.twelvedataApi": "Marktdaten & Analytics",
+
+    "partners.networks": "Verbunden mit globalen Zahlungsnetzwerken",
   },
 };
 
