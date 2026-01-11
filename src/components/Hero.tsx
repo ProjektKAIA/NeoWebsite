@@ -29,13 +29,18 @@ const galleryItems: GalleryItem[] = [
   },
   {
     type: "image",
-    src: "/app-mockup.png",
-    alt: "NeoNeo Bank App - Banking Dashboard",
+    src: "/Gemini_Generated_Image_cqpug7cqpug7cqpu.png",
+    alt: "NeoNeo Bank App - Dashboard",
   },
   {
     type: "image",
-    src: "/app-mockup.png",
+    src: "/Gemini_Generated_Image_gvsckcgvsckcgvsc.png",
     alt: "NeoNeo Bank App - Features",
+  },
+  {
+    type: "image",
+    src: "/Gemini_Generated_Image_duupggduupggduup.png",
+    alt: "NeoNeo Bank App - Transactions",
   },
 ];
 
@@ -92,11 +97,13 @@ export default function Hero() {
             effect="coverflow"
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView={1}
+            slidesPerView={1.2}
+            spaceBetween={20}
+            speed={600}
             coverflowEffect={{
               rotate: 0,
-              stretch: 0,
-              depth: 100,
+              stretch: 50,
+              depth: 150,
               modifier: 1,
               slideShadows: false,
             }}
@@ -109,6 +116,16 @@ export default function Hero() {
               prevEl: ".swiper-button-prev-custom",
             }}
             onSlideChange={handleSlideChange}
+            breakpoints={{
+              640: {
+                slidesPerView: 1.3,
+                spaceBetween: 30,
+              },
+              768: {
+                slidesPerView: 1.4,
+                spaceBetween: 40,
+              },
+            }}
             className="hero-swiper"
           >
             {galleryItems.map((item, index) => (
@@ -240,22 +257,34 @@ export default function Hero() {
       <style jsx global>{`
         .hero-swiper {
           padding-bottom: 40px;
+          overflow: visible;
+        }
+        .hero-swiper .swiper-wrapper {
+          transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        .hero-swiper .swiper-slide {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: transform 0.5s ease, opacity 0.5s ease;
+          opacity: 0.5;
+          transform: scale(0.9);
+        }
+        .hero-swiper .swiper-slide-active {
+          opacity: 1;
+          transform: scale(1);
         }
         .hero-swiper .swiper-pagination-bullet {
           background: #d1d5db;
           opacity: 1;
           width: 8px;
           height: 8px;
+          transition: all 0.3s ease;
         }
         .hero-swiper .swiper-pagination-bullet-active {
           background: #ff5d37;
           width: 24px;
           border-radius: 4px;
-        }
-        .hero-swiper .swiper-slide {
-          display: flex;
-          align-items: center;
-          justify-content: center;
         }
       `}</style>
     </section>
