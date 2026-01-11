@@ -97,13 +97,13 @@ export default function Hero() {
             effect="coverflow"
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView={1.2}
-            spaceBetween={20}
+            slidesPerView={1}
+            spaceBetween={0}
             speed={600}
             coverflowEffect={{
               rotate: 0,
-              stretch: 50,
-              depth: 150,
+              stretch: 0,
+              depth: 100,
               modifier: 1,
               slideShadows: false,
             }}
@@ -116,16 +116,6 @@ export default function Hero() {
               prevEl: ".swiper-button-prev-custom",
             }}
             onSlideChange={handleSlideChange}
-            breakpoints={{
-              640: {
-                slidesPerView: 1.3,
-                spaceBetween: 30,
-              },
-              768: {
-                slidesPerView: 1.4,
-                spaceBetween: 40,
-              },
-            }}
             className="hero-swiper"
           >
             {galleryItems.map((item, index) => (
@@ -257,7 +247,6 @@ export default function Hero() {
       <style jsx global>{`
         .hero-swiper {
           padding-bottom: 40px;
-          overflow: visible;
         }
         .hero-swiper .swiper-wrapper {
           transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -267,12 +256,6 @@ export default function Hero() {
           align-items: center;
           justify-content: center;
           transition: transform 0.5s ease, opacity 0.5s ease;
-          opacity: 0.5;
-          transform: scale(0.9);
-        }
-        .hero-swiper .swiper-slide-active {
-          opacity: 1;
-          transform: scale(1);
         }
         .hero-swiper .swiper-pagination-bullet {
           background: #d1d5db;
