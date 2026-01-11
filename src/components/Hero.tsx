@@ -27,21 +27,22 @@ const galleryItems: GalleryItem[] = [
     src: "/grok-video-cropped.mp4",
     poster: "/app-mockup.png",
   },
-  {
-    type: "image",
-    src: "/Gemini_Generated_Image_cqpug7cqpug7cqpu.png",
-    alt: "NeoNeo Bank App - Dashboard",
-  },
-  {
-    type: "image",
-    src: "/Gemini_Generated_Image_gvsckcgvsckcgvsc.png",
-    alt: "NeoNeo Bank App - Features",
-  },
-  {
-    type: "image",
-    src: "/Gemini_Generated_Image_duupggduupggduup.png",
-    alt: "NeoNeo Bank App - Transactions",
-  },
+  // Images temporarily disabled - need versions without background
+  // {
+  //   type: "image",
+  //   src: "/Gemini_Generated_Image_cqpug7cqpug7cqpu.png",
+  //   alt: "NeoNeo Bank App - Dashboard",
+  // },
+  // {
+  //   type: "image",
+  //   src: "/Gemini_Generated_Image_gvsckcgvsckcgvsc.png",
+  //   alt: "NeoNeo Bank App - Features",
+  // },
+  // {
+  //   type: "image",
+  //   src: "/Gemini_Generated_Image_duupggduupggduup.png",
+  //   alt: "NeoNeo Bank App - Transactions",
+  // },
 ];
 
 export default function Hero() {
