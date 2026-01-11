@@ -124,7 +124,7 @@ export default function FeaturesPage() {
       features: [
         {
           title: "In-App Chat",
-          desc: "Chatte mit Freunden direkt in der Neoneo App.",
+          desc: "Chatte mit Freunden direkt in der NeoNeo App.",
           icon: MessageCircle
         },
         {
@@ -287,7 +287,7 @@ export default function FeaturesPage() {
       features: [
         {
           title: "In-App Chat",
-          desc: "Chat with friends directly in the Neoneo app.",
+          desc: "Chat with friends directly in the NeoNeo app.",
           icon: MessageCircle
         },
         {
@@ -362,8 +362,8 @@ export default function FeaturesPage() {
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               {language === "de"
-                ? "Entdecke alle Features, die Neoneo Bank zur ultimativen Banking-App machen."
-                : "Discover all the features that make Neoneo Bank the ultimate banking app."}
+                ? "Entdecke alle Features, die NeoNeo Bank zur ultimativen Banking-App machen."
+                : "Discover all the features that make NeoNeo Bank the ultimate banking app."}
             </p>
           </div>
         </section>
@@ -410,8 +410,8 @@ export default function FeaturesPage() {
             </h2>
             <p className="text-white/80 mb-8">
               {language === "de"
-                ? "Werde einer der Ersten, die Neoneo Bank erleben."
-                : "Be one of the first to experience Neoneo Bank."}
+                ? "Werde einer der Ersten, die NeoNeo Bank erleben."
+                : "Be one of the first to experience NeoNeo Bank."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/pricing" className="bg-white text-primary px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors">

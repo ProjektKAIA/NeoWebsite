@@ -1,40 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
-
-// Ring Logo Component - based on the app mockup design
-function RingLogo({ className = "w-10 h-10" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="ringGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#c0d4e8" />
-          <stop offset="30%" stopColor="#e8eff5" />
-          <stop offset="50%" stopColor="#ffffff" />
-          <stop offset="70%" stopColor="#d4e4f0" />
-          <stop offset="100%" stopColor="#a8c4dc" />
-        </linearGradient>
-        <linearGradient id="ringGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#ff5d37" />
-          <stop offset="50%" stopColor="#ffb347" />
-          <stop offset="100%" stopColor="#ff8c42" />
-        </linearGradient>
-        <linearGradient id="ringGradient3" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#4a7fb0" />
-          <stop offset="50%" stopColor="#7eb3d8" />
-          <stop offset="100%" stopColor="#b8d4ea" />
-        </linearGradient>
-      </defs>
-      <ellipse cx="50" cy="50" rx="38" ry="35" stroke="url(#ringGradient1)" strokeWidth="12" fill="none" opacity="0.9"/>
-      <ellipse cx="50" cy="50" rx="38" ry="35" stroke="url(#ringGradient2)" strokeWidth="4" strokeDasharray="60 140" fill="none" opacity="0.7"/>
-      <ellipse cx="50" cy="50" rx="38" ry="35" stroke="url(#ringGradient3)" strokeWidth="3" strokeDasharray="40 160" strokeDashoffset="100" fill="none" opacity="0.6"/>
-      <ellipse cx="35" cy="35" rx="15" ry="8" fill="white" opacity="0.3" transform="rotate(-30 35 35)"/>
-    </svg>
-  );
-}
 
 // Language data with flags
 const languages = [
@@ -223,9 +193,15 @@ export default function Header() {
         <nav className="flex items-center justify-between">
           {/* Logo with Ring */}
           <Link href="/" className="flex items-center gap-3">
-            <RingLogo className="w-10 h-10" />
+            <Image
+              src="/logo.png"
+              alt="NeoNeo Bank Logo"
+              width={40}
+              height={40}
+              className="w-10 h-10"
+            />
             <span className="text-xl font-semibold text-gray-900">
-              Neoneo Bank
+              NeoNeo Bank
             </span>
           </Link>
 

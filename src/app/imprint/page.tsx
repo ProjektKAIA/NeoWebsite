@@ -33,7 +33,7 @@ export default function ImprintPage() {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Angaben gemäß § 5 TMG / Companies Act 2006</h2>
                 <p className="mb-4">
                   <strong>NEONEO HOLDINGS LTD</strong><br />
-                  (Handelnd als Neoneo Bank)
+                  (Handelnd als NeoNeo Bank)
                 </p>
                 <p className="mb-4">
                   20 Wenlock Road<br />
@@ -135,7 +135,7 @@ export default function ImprintPage() {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Company Information (Companies Act 2006)</h2>
                 <p className="mb-4">
                   <strong>NEONEO HOLDINGS LTD</strong><br />
-                  (Trading as Neoneo Bank)
+                  (Trading as NeoNeo Bank)
                 </p>
                 <p className="mb-4">
                   20 Wenlock Road<br />

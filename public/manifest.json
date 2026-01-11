@@ -1,6 +1,6 @@
 {
-  "name": "Neoneo Bank",
-  "short_name": "Neoneo",
+  "name": "NeoNeo Bank",
+  "short_name": "NeoNeo",
   "description": "Banking, crypto, investments and payments — all in one app",
   "start_url": "/",
   "display": "standalone",
@@ -8,9 +8,14 @@
   "theme_color": "#ff5d37",
   "icons": [
     {
-      "src": "/icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }

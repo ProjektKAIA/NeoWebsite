@@ -1,10 +1,64 @@
 "use client";
 
 import Image from "next/image";
+import { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation, EffectCoverflow } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
 import { useLanguage } from "@/context/LanguageContext";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/effect-coverflow";
+
+type GalleryItem = {
+  type: "image" | "video";
+  src: string;
+  alt?: string;
+  poster?: string;
+};
+
+// Gallery items - add more images/videos here
+const galleryItems: GalleryItem[] = [
+  {
+    type: "video",
+    src: "/grok-video-96945457-d22a-4b84-ba97-916e744a4197.mp4",
+    poster: "/app-mockup.png",
+  },
+  {
+    type: "image",
+    src: "/app-mockup.png",
+    alt: "NeoNeo Bank App - Banking Dashboard",
+  },
+  {
+    type: "image",
+    src: "/app-mockup.png",
+    alt: "NeoNeo Bank App - Features",
+  },
+];
 
 export default function Hero() {
   const { t } = useLanguage();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  const handleSlideChange = (swiper: SwiperType) => {
+    setActiveIndex(swiper.activeIndex);
+
+    // Handle video playback when sliding
+    videoRefs.current.forEach((video, index) => {
+      if (video) {
+        if (index === swiper.activeIndex) {
+          // Auto-play video when it becomes active
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+    });
+  };
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center pt-28 md:pt-32 pb-10 bg-white">
@@ -27,21 +81,119 @@ export default function Hero() {
         </p>
 
         {/* Tagline */}
-        <p className="text-sm text-gray-500 italic mb-16">
+        <p className="text-sm text-gray-500 italic mb-12">
           {t("hero.tagline")}
         </p>
 
-        {/* iPhone Mockup */}
-        <div className="relative mx-auto w-64 sm:w-72 md:w-80 lg:w-96">
-          <Image
-            src="/app-mockup.png"
-            alt="NeoNeo Bank App - Banking, crypto, investments and payments in one app"
-            width={400}
-            height={800}
-            className="drop-shadow-2xl w-full h-auto"
-            priority
-            sizes="(max-width: 640px) 256px, (max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
-          />
+        {/* Swipeable Gallery */}
+        <div className="relative mx-auto w-full max-w-md md:max-w-lg lg:max-w-xl">
+          <Swiper
+            modules={[Pagination, Navigation, EffectCoverflow]}
+            effect="coverflow"
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerView={1}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: false,
+            }}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            navigation={{
+              nextEl: ".swiper-button-next-custom",
+              prevEl: ".swiper-button-prev-custom",
+            }}
+            onSlideChange={handleSlideChange}
+            className="hero-swiper"
+          >
+            {galleryItems.map((item, index) => (
+              <SwiperSlide key={index} className="flex items-center justify-center">
+                <div className="relative mx-auto w-64 sm:w-72 md:w-80 lg:w-96">
+                  {item.type === "video" ? (
+                    <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-black">
+                      <video
+                        ref={(el) => { videoRefs.current[index] = el; }}
+                        src={item.src}
+                        poster={item.poster}
+                        className="w-full h-auto"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                      >
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  ) : (
+                    <Image
+                      src={item.src}
+                      alt={item.alt || "NeoNeo Bank App"}
+                      width={400}
+                      height={800}
+                      className="drop-shadow-2xl w-full h-auto"
+                      priority={index === 0}
+                      sizes="(max-width: 640px) 256px, (max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
+                    />
+                  )}
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* Custom Navigation Arrows */}
+          {galleryItems.length > 1 && (
+            <>
+              <button
+                className="swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110 -ml-2 md:-ml-6"
+                aria-label="Previous slide"
+              >
+                <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                className="swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110 -mr-2 md:-mr-6"
+                aria-label="Next slide"
+              >
+                <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </>
+          )}
+
+          {/* Slide indicator */}
+          {galleryItems.length > 1 && (
+            <div className="mt-6 flex justify-center gap-2">
+              {galleryItems.map((item, index) => (
+                <div
+                  key={index}
+                  className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium transition-all ${
+                    activeIndex === index
+                      ? "bg-primary text-white"
+                      : "bg-gray-100 text-gray-500"
+                  }`}
+                >
+                  {item.type === "video" ? (
+                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  ) : (
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  )}
+                  <span>{index + 1}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Coming Soon - App Store Buttons */}
@@ -83,6 +235,29 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Custom Swiper Styles */}
+      <style jsx global>{`
+        .hero-swiper {
+          padding-bottom: 40px;
+        }
+        .hero-swiper .swiper-pagination-bullet {
+          background: #d1d5db;
+          opacity: 1;
+          width: 8px;
+          height: 8px;
+        }
+        .hero-swiper .swiper-pagination-bullet-active {
+          background: #ff5d37;
+          width: 24px;
+          border-radius: 4px;
+        }
+        .hero-swiper .swiper-slide {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      `}</style>
     </section>
   );
 }

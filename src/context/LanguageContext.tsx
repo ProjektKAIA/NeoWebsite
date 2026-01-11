@@ -82,7 +82,7 @@ const translations: Record<Language, Record<string, string>> = {
     // CTA
     "cta.label": "DESIGNED FOR MODERN LIFE",
     "cta.title": "Feel free to contact us",
-    "cta.desc": "Neoneo bank gives users the tools to send, save, invest, and grow from one beautifully simple app",
+    "cta.desc": "NeoNeo Bank gives users the tools to send, save, invest, and grow from one beautifully simple app",
     "cta.button": "Contact us",
 
     // Footer
@@ -210,7 +210,7 @@ const translations: Record<Language, Record<string, string>> = {
     // CTA
     "cta.label": "DESIGNED FÜR MODERNES LEBEN",
     "cta.title": "Kontaktiere uns gerne",
-    "cta.desc": "Neoneo Bank gibt Nutzern die Tools zum Senden, Sparen, Investieren und Wachsen aus einer wunderschön einfachen App",
+    "cta.desc": "NeoNeo Bank gibt Nutzern die Tools zum Senden, Sparen, Investieren und Wachsen aus einer wunderschön einfachen App",
     "cta.button": "Kontaktieren Sie uns",
 
     // Footer

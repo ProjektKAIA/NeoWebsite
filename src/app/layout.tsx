@@ -11,12 +11,12 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://neoneobank.com"),
-  title: "Neoneo Bank - The Next-Gen Mobile Bank",
+  title: "NeoNeo Bank - The Next-Gen Mobile Bank",
   description: "The operating system for modern money. Banking, crypto, investments and payments — all in one app.",
   keywords: ["neobank", "digital bank", "crypto", "investments", "mobile banking", "fintech", "digital wallet", "IBAN", "SEPA", "VISA"],
-  authors: [{ name: "Neoneo Bank" }],
-  creator: "Neoneo Bank",
-  publisher: "Neoneo Bank",
+  authors: [{ name: "NeoNeo Bank" }],
+  creator: "NeoNeo Bank",
+  publisher: "NeoNeo Bank",
   robots: {
     index: true,
     follow: true,
@@ -29,32 +29,31 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Neoneo Bank - The Next-Gen Mobile Bank",
+    title: "NeoNeo Bank - The Next-Gen Mobile Bank",
     description: "The operating system for modern money. Banking, crypto, investments and payments — all in one app.",
     type: "website",
     locale: "de_DE",
-    siteName: "Neoneo Bank",
+    siteName: "NeoNeo Bank",
     images: [
       {
         url: "/app-mockup.png",
         width: 400,
         height: 800,
-        alt: "Neoneo Bank App",
+        alt: "NeoNeo Bank App",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Neoneo Bank - The Next-Gen Mobile Bank",
+    title: "NeoNeo Bank - The Next-Gen Mobile Bank",
     description: "The operating system for modern money. Banking, crypto, investments and payments — all in one app",
     images: ["/app-mockup.png"],
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/logo.png", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "/logo.png",
   },
   manifest: "/manifest.json",
 };

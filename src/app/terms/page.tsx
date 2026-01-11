@@ -32,7 +32,7 @@ export default function TermsPage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Geltungsbereich</h2>
                 <p className="mb-4">
-                  Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung der Website und zukünftigen Dienstleistungen der LUNA LTD, handelnd als Neoneo Bank (nachfolgend "Anbieter" genannt).
+                  Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung der Website und zukünftigen Dienstleistungen der LUNA LTD, handelnd als NeoNeo Bank (nachfolgend "Anbieter" genannt).
                 </p>
                 <p className="mb-4">
                   Mit der Nutzung unserer Website und/oder Dienstleistungen erklären Sie sich mit diesen AGB einverstanden. Wenn Sie mit diesen Bedingungen nicht einverstanden sind, nutzen Sie unsere Website oder Dienstleistungen bitte nicht.
@@ -43,7 +43,7 @@ export default function TermsPage() {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Anbieter</h2>
                 <p className="mb-4">
                   <strong>LUNA LTD</strong><br />
-                  (Handelnd als Neoneo Bank)<br />
+                  (Handelnd als NeoNeo Bank)<br />
                   20 Wenlock Road<br />
                   London, N1 7GU<br />
                   United Kingdom<br /><br />
@@ -164,7 +164,7 @@ export default function TermsPage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Scope</h2>
                 <p className="mb-4">
-                  These Terms of Service apply to the use of the website and future services of LUNA LTD, trading as Neoneo Bank (hereinafter referred to as "Provider").
+                  These Terms of Service apply to the use of the website and future services of LUNA LTD, trading as NeoNeo Bank (hereinafter referred to as "Provider").
                 </p>
                 <p className="mb-4">
                   By using our website and/or services, you agree to these Terms. If you do not agree with these terms, please do not use our website or services.
@@ -175,7 +175,7 @@ export default function TermsPage() {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Provider</h2>
                 <p className="mb-4">
                   <strong>LUNA LTD</strong><br />
-                  (Trading as Neoneo Bank)<br />
+                  (Trading as NeoNeo Bank)<br />
                   20 Wenlock Road<br />
                   London, N1 7GU<br />
                   United Kingdom<br /><br />

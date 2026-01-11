@@ -75,12 +75,12 @@ export default function AboutPage() {
   const timeline = language === "de" ? [
     { year: "2024", title: "Gründung", desc: "NEONEO HOLDINGS LTD wird in London gegründet" },
     { year: "2025", title: "Entwicklung", desc: "Aufbau der Infrastruktur und Partnerschaften" },
-    { year: "2026", title: "Launch", desc: "Geplanter Start der Neoneo Bank App" },
+    { year: "2026", title: "Launch", desc: "Geplanter Start der NeoNeo Bank App" },
     { year: "Zukunft", title: "Wachstum", desc: "Expansion in weitere Märkte weltweit" }
   ] : [
     { year: "2024", title: "Foundation", desc: "NEONEO HOLDINGS LTD founded in London" },
     { year: "2025", title: "Development", desc: "Building infrastructure and partnerships" },
-    { year: "2026", title: "Launch", desc: "Planned launch of Neoneo Bank app" },
+    { year: "2026", title: "Launch", desc: "Planned launch of NeoNeo Bank app" },
     { year: "Future", title: "Growth", desc: "Expansion into more markets worldwide" }
   ];
 
@@ -129,8 +129,8 @@ export default function AboutPage() {
                 <div className="space-y-4 text-gray-600">
                   <p>
                     {language === "de"
-                      ? "Neoneo Bank wurde aus einer einfachen Überzeugung heraus gegründet: Jeder verdient Zugang zu modernen, fairen und transparenten Finanzdienstleistungen."
-                      : "Neoneo Bank was founded from a simple belief: everyone deserves access to modern, fair, and transparent financial services."}
+                      ? "NeoNeo Bank wurde aus einer einfachen Überzeugung heraus gegründet: Jeder verdient Zugang zu modernen, fairen und transparenten Finanzdienstleistungen."
+                      : "NeoNeo Bank was founded from a simple belief: everyone deserves access to modern, fair, and transparent financial services."}
                   </p>
                   <p>
                     {language === "de"
@@ -139,8 +139,8 @@ export default function AboutPage() {
                   </p>
                   <p>
                     {language === "de"
-                      ? "Mit Neoneo Bank schaffen wir eine Alternative: Eine Bank, die dich versteht, egal wo du bist oder wohin du gehst."
-                      : "With Neoneo Bank, we're creating an alternative: A bank that understands you, no matter where you are or where you're going."}
+                      ? "Mit NeoNeo Bank schaffen wir eine Alternative: Eine Bank, die dich versteht, egal wo du bist oder wohin du gehst."
+                      : "With NeoNeo Bank, we're creating an alternative: A bank that understands you, no matter where you are or where you're going."}
                   </p>
                 </div>
               </div>

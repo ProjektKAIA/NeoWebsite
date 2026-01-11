@@ -1,31 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
-
-// Ring Logo Component
-function RingLogo({ className = "w-8 h-8" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="footerRingGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#c0d4e8" />
-          <stop offset="30%" stopColor="#e8eff5" />
-          <stop offset="50%" stopColor="#ffffff" />
-          <stop offset="70%" stopColor="#d4e4f0" />
-          <stop offset="100%" stopColor="#a8c4dc" />
-        </linearGradient>
-        <linearGradient id="footerRingGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#ff5d37" />
-          <stop offset="50%" stopColor="#ffb347" />
-          <stop offset="100%" stopColor="#ff8c42" />
-        </linearGradient>
-      </defs>
-      <ellipse cx="50" cy="50" rx="38" ry="35" stroke="url(#footerRingGradient1)" strokeWidth="12" fill="none" opacity="0.9"/>
-      <ellipse cx="50" cy="50" rx="38" ry="35" stroke="url(#footerRingGradient2)" strokeWidth="4" strokeDasharray="60 140" fill="none" opacity="0.7"/>
-    </svg>
-  );
-}
 
 export default function Footer() {
   const { language, t } = useLanguage();
@@ -53,8 +30,14 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <RingLogo className="w-10 h-10" />
-              <span className="text-2xl font-bold">Neoneo Bank</span>
+              <Image
+                src="/logo.png"
+                alt="NeoNeo Bank Logo"
+                width={40}
+                height={40}
+                className="w-10 h-10"
+              />
+              <span className="text-2xl font-bold">NeoNeo Bank</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
               {t("footer.description")}
@@ -179,7 +162,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 md:py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
             <p className="text-gray-500 text-xs md:text-sm text-center md:text-left">
-              © {currentYear} NEONEO HOLDINGS LTD trading as Neoneo Bank. {t("footer.allRights")}
+              © {currentYear} NEONEO HOLDINGS LTD trading as NeoNeo Bank. {t("footer.allRights")}
             </p>
             <div className="flex items-center gap-4 md:gap-6 text-xs md:text-sm text-gray-500">
               <span className="flex items-center gap-2">
