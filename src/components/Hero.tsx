@@ -24,7 +24,7 @@ type GalleryItem = {
 const galleryItems: GalleryItem[] = [
   {
     type: "video",
-    src: "/grok-video-96945457-d22a-4b84-ba97-916e744a4197.mp4",
+    src: "/grok-video-cropped.mp4",
     poster: "/app-mockup.png",
   },
   {
