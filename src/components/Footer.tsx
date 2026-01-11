@@ -87,8 +87,8 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Contact Email */}
-            <div className="flex gap-4">
+            {/* Contact & Links */}
+            <div className="flex flex-col gap-3">
               <a
                 href="mailto:hello@neoneobank.de"
                 className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
@@ -98,6 +98,18 @@ export default function Footer() {
                   <path d="M22 6L12 13L2 6"/>
                 </svg>
                 <span className="text-sm">hello@neoneobank.de</span>
+              </a>
+              <a
+                href="https://neoneobank.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                <span className="text-sm">neoneobank.com</span>
               </a>
             </div>
           </div>
@@ -146,7 +158,7 @@ export default function Footer() {
             {/* Registered Company */}
             <div>
               <p className="font-medium text-gray-300 mb-2">{t("footer.registeredCompany")}</p>
-              <p>LUNA LTD</p>
+              <p>NEONEO HOLDINGS LTD</p>
               <p>Company No. 16121231</p>
               <p>{t("footer.registeredIn")}</p>
             </div>
@@ -167,7 +179,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 md:py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
             <p className="text-gray-500 text-xs md:text-sm text-center md:text-left">
-              © {currentYear} LUNA LTD trading as Neoneo Bank. {t("footer.allRights")}
+              © {currentYear} NEONEO HOLDINGS LTD trading as Neoneo Bank. {t("footer.allRights")}
             </p>
             <div className="flex items-center gap-4 md:gap-6 text-xs md:text-sm text-gray-500">
               <span className="flex items-center gap-2">

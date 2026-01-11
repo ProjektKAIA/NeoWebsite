@@ -208,12 +208,13 @@ function MobileLanguageSelector() {
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   const navLinks = [
-    { href: "#about", labelKey: "nav.about" },
-    { href: "#features", labelKey: "nav.features" },
-    { href: "#contact", labelKey: "nav.contact" },
+    { href: "/features", label: language === "de" ? "Features" : "Features" },
+    { href: "/pricing", label: language === "de" ? "Preise" : "Pricing" },
+    { href: "/technology", label: language === "de" ? "Technologie" : "Technology" },
+    { href: "/about", label: language === "de" ? "Über uns" : "About" },
   ];
 
   return (
@@ -236,7 +237,7 @@ export default function Header() {
                 href={link.href}
                 className="text-gray-600 hover:text-gray-900 transition-colors duration-300 text-sm font-medium"
               >
-                {t(link.labelKey)}
+                {link.label}
               </Link>
             ))}
           </div>
@@ -278,7 +279,7 @@ export default function Header() {
                   className="text-gray-600 hover:text-gray-900 transition-colors duration-300 text-sm font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {t(link.labelKey)}
+                  {link.label}
                 </Link>
               ))}
               <a

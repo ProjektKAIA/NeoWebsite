@@ -32,7 +32,7 @@ export default function ImprintPage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Angaben gemäß § 5 TMG / Companies Act 2006</h2>
                 <p className="mb-4">
-                  <strong>LUNA LTD</strong><br />
+                  <strong>NEONEO HOLDINGS LTD</strong><br />
                   (Handelnd als Neoneo Bank)
                 </p>
                 <p className="mb-4">
@@ -134,7 +134,7 @@ export default function ImprintPage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Company Information (Companies Act 2006)</h2>
                 <p className="mb-4">
-                  <strong>LUNA LTD</strong><br />
+                  <strong>NEONEO HOLDINGS LTD</strong><br />
                   (Trading as Neoneo Bank)
                 </p>
                 <p className="mb-4">

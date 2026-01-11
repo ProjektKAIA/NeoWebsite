@@ -7,10 +7,10 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-10 bg-white">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-28 md:pt-32 pb-10 bg-white">
       <div className="max-w-7xl mx-auto px-6 text-center">
         {/* Section Label */}
-        <p className="section-label mb-6">
+        <p className="section-label mb-6 mt-4 md:mt-8">
           {t("hero.label")}
         </p>
 

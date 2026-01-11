@@ -19,10 +19,10 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.contactUs": "Contact us",
 
     // Hero
-    "hero.label": "THE NEXT-GEN MOBILE BANK",
+    "hero.label": "THE NEXT-GEN MOBILE BANKING APP",
     "hero.title1": "Smart money management",
     "hero.title2": "in your pocket",
-    "hero.subtitle": "The operating system for modern money.",
+    "hero.subtitle": "The Operating System for modern Banking.",
     "hero.tagline": "Smart money builds empire",
     "hero.comingSoon": "Coming soon",
     "hero.downloadOn": "Download on the",
@@ -56,7 +56,7 @@ const translations: Record<Language, Record<string, string>> = {
     "features.desc": "Neobank is a type of direct bank that operates exclusively using online banking without traditional physical branch networks",
 
     "features.iban.title": "Instant IBAN & SEPA\nBanking Transfer",
-    "features.iban.desc": "Fast and secure European transfers",
+    "features.iban.desc": "Fast and secure transfers to Europe, Switzerland, Turkey, Israel, Saudi Arabia, UAE, Qatar, Bahrain, Kuwait, Jordan, Pakistan, Azerbaijan, Georgia, Tunisia and Egypt",
 
     "features.cards.title": "Digital and Physical\nVISA Debit Cards",
     "features.cards.desc": "Multi-currency accounts & card balances",
@@ -65,7 +65,7 @@ const translations: Record<Language, Record<string, string>> = {
     "features.transfers.desc": "User to User Payments via QR-Code and Phone number",
 
     "features.crypto.title": "Real-time crypto rates\n& market data",
-    "features.crypto.desc": "Buy, Hold and Sell over 583+ Cryptocurrencies",
+    "features.crypto.desc": "Buy, Hold and Sell over 596+ Cryptocurrencies",
 
     "features.investments.title": "Smart Global Diversified\nInvestments with live insights",
     "features.investments.desc": "Buy listed Stocks, Funds, ETF's, Bonds directly on USA, UK, EU, Japan, Hong Kong, Singapore Stock Exchanges",
@@ -118,7 +118,7 @@ const translations: Record<Language, Record<string, string>> = {
     "partners.nium.feature4": "Real-time FX in 100+ Markets",
 
     "partners.kraken.desc": "Industry-leading crypto exchange providing secure digital asset trading and custody solutions.",
-    "partners.kraken.feature1": "400+ Cryptocurrencies",
+    "partners.kraken.feature1": "596+ Cryptocurrencies",
     "partners.kraken.feature2": "Fiat On/Off Ramp",
     "partners.kraken.feature3": "Institutional-Grade Security",
     "partners.kraken.feature4": "24/7 Trading & Staking",
@@ -147,10 +147,10 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.contactUs": "Kontaktieren Sie uns",
 
     // Hero
-    "hero.label": "DIE MOBILE BANK DER NÄCHSTEN GENERATION",
+    "hero.label": "DIE MOBILE BANKING APP DER NÄCHSTEN GENERATION",
     "hero.title1": "Smartes Geldmanagement",
     "hero.title2": "in deiner Tasche",
-    "hero.subtitle": "Das Betriebssystem für modernes Geld.",
+    "hero.subtitle": "Das Betriebssystem für modernes Banking.",
     "hero.tagline": "Smartes Geld baut Imperien",
     "hero.comingSoon": "Bald verfügbar",
     "hero.downloadOn": "Laden im",
@@ -184,7 +184,7 @@ const translations: Record<Language, Record<string, string>> = {
     "features.desc": "Neobank ist eine Direktbank, die ausschließlich Online-Banking ohne traditionelles Filialnetz anbietet",
 
     "features.iban.title": "Sofortige IBAN & SEPA\nBanküberweisungen",
-    "features.iban.desc": "Schnelle und sichere europäische Überweisungen",
+    "features.iban.desc": "Schnelle und sichere Überweisungen nach Europa, Schweiz, Türkei, Israel, Saudi-Arabien, VAE, Katar, Bahrain, Kuwait, Jordanien, Pakistan, Aserbaidschan, Georgien, Tunesien und Ägypten",
 
     "features.cards.title": "Digitale und physische\nVISA Debitkarten",
     "features.cards.desc": "Multi-Währungs-Konten & Kartensalden",
@@ -193,7 +193,7 @@ const translations: Record<Language, Record<string, string>> = {
     "features.transfers.desc": "Nutzer-zu-Nutzer Zahlungen via QR-Code und Telefonnummer",
 
     "features.crypto.title": "Echtzeit-Kryptokurse\n& Marktdaten",
-    "features.crypto.desc": "Kaufen, Halten und Verkaufen von über 583+ Kryptowährungen",
+    "features.crypto.desc": "Kaufen, Halten und Verkaufen von über 596+ Kryptowährungen",
 
     "features.investments.title": "Smarte globale diversifizierte\nInvestments mit Live-Einblicken",
     "features.investments.desc": "Kaufe gelistete Aktien, Fonds, ETFs, Anleihen direkt an USA, UK, EU, Japan, Hongkong, Singapur Börsen",
@@ -246,7 +246,7 @@ const translations: Record<Language, Record<string, string>> = {
     "partners.nium.feature4": "Echtzeit-FX in 100+ Märkten",
 
     "partners.kraken.desc": "Branchenführende Krypto-Börse mit sicheren Digital-Asset-Trading und Verwahrungslösungen.",
-    "partners.kraken.feature1": "400+ Kryptowährungen",
+    "partners.kraken.feature1": "596+ Kryptowährungen",
     "partners.kraken.feature2": "Fiat Ein-/Auszahlung",
     "partners.kraken.feature3": "Institutionelle Sicherheit",
     "partners.kraken.feature4": "24/7 Trading & Staking",

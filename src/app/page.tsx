@@ -4,6 +4,7 @@ import {
   FeatureHighlights,
   MainFeatures,
   TechPartners,
+  PricingPlans,
   CTA,
   Footer,
   CookieBanner
@@ -18,6 +19,7 @@ export default function Home() {
         <FeatureHighlights />
         <MainFeatures />
         <TechPartners />
+        <PricingPlans />
         <CTA />
       </main>
       <Footer />
