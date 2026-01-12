@@ -24,7 +24,7 @@ type GalleryItem = {
 const galleryItems: GalleryItem[] = [
   {
     type: "video",
-    src: "/grok-video-cropped.mp4",
+    src: "/grok-video.mp4",
     poster: "/app-mockup.png",
   },
   // Images temporarily disabled - need versions without background
@@ -128,7 +128,7 @@ export default function Hero() {
                         ref={(el) => { videoRefs.current[index] = el; }}
                         src={item.src}
                         poster={item.poster}
-                        className="w-full h-auto"
+                        className="w-full h-auto block"
                         autoPlay
                         loop
                         muted
