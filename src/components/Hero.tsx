@@ -123,7 +123,7 @@ export default function Hero() {
               <SwiperSlide key={index} className="flex items-center justify-center">
                 <div className="relative mx-auto w-64 sm:w-72 md:w-80 lg:w-96">
                   {item.type === "video" ? (
-                    <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-black">
+                    <div className="relative overflow-hidden bg-white">
                       <video
                         ref={(el) => { videoRefs.current[index] = el; }}
                         src={item.src}
