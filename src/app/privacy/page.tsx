@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { ArrowLeft } from "lucide-react";
 import LegalDisclaimer from "@/components/LegalDisclaimer";
+import { COMPANY } from "@/constants/company";
 
 export default function PrivacyPage() {
   const { language } = useLanguage();
@@ -62,14 +63,14 @@ export default function PrivacyPage() {
                   Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
                 </p>
                 <p className="mb-4">
-                  LUNA LTD<br />
-                  20 Wenlock Road<br />
-                  London, N1 7GU<br />
-                  United Kingdom
+                  {COMPANY.name}<br />
+                  {COMPANY.address.street}<br />
+                  {COMPANY.address.city}, {COMPANY.address.postcode}<br />
+                  {COMPANY.address.country}
                 </p>
                 <p className="mb-4">
-                  <strong>Vertreten durch:</strong> Paul Kappel (CEO)<br />
-                  <strong>E-Mail:</strong> hello@neoneobank.de
+                  <strong>Vertreten durch:</strong> {COMPANY.management.ceo} (CEO)<br />
+                  <strong>E-Mail:</strong> {COMPANY.contact.email}
                 </p>
                 <p className="mb-4">
                   Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.
@@ -196,14 +197,14 @@ export default function PrivacyPage() {
                   The responsible party for data processing on this website is:
                 </p>
                 <p className="mb-4">
-                  LUNA LTD<br />
-                  20 Wenlock Road<br />
-                  London, N1 7GU<br />
-                  United Kingdom
+                  {COMPANY.name}<br />
+                  {COMPANY.address.street}<br />
+                  {COMPANY.address.city}, {COMPANY.address.postcode}<br />
+                  {COMPANY.address.country}
                 </p>
                 <p className="mb-4">
-                  <strong>Represented by:</strong> Paul Kappel (CEO)<br />
-                  <strong>Email:</strong> hello@neoneobank.de
+                  <strong>Represented by:</strong> {COMPANY.management.ceo} (CEO)<br />
+                  <strong>Email:</strong> {COMPANY.contact.email}
                 </p>
                 <p className="mb-4">
                   The responsible party is the natural or legal person who, alone or jointly with others, decides on the purposes and means of processing personal data (e.g., names, email addresses, etc.).

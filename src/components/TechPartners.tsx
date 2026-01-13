@@ -76,15 +76,15 @@ interface PartnerCardProps {
 
 function PartnerCard({ logo, name, description, features }: PartnerCardProps) {
   return (
-    <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
-      <div className="h-10 md:h-12 flex items-center text-gray-800 mb-4 md:mb-6">
+    <div className="bg-primary/10 rounded-2xl p-6 md:p-8 border border-primary/20 hover:bg-primary/15 hover:border-primary/30 transition-all duration-300">
+      <div className="h-10 md:h-12 flex items-center text-primary mb-4 md:mb-6">
         {logo}
       </div>
       <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">{name}</h3>
-      <p className="text-gray-600 mb-4 text-sm leading-relaxed">{description}</p>
+      <p className="text-gray-700 mb-4 text-sm leading-relaxed">{description}</p>
       <ul className="space-y-2">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-start gap-2 text-sm text-gray-500">
+          <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
             <svg className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
@@ -159,7 +159,7 @@ export default function TechPartners() {
         </div>
 
         {/* Architecture Diagram */}
-        <div className="bg-white rounded-2xl p-6 md:p-12 shadow-sm border border-gray-100">
+        <div className="bg-primary/10 rounded-2xl p-6 md:p-12 border border-primary/20">
           <h3 className="text-xl md:text-2xl font-semibold text-gray-900 text-center mb-6 md:mb-10">
             {t("partners.architecture")}
           </h3>
@@ -178,23 +178,161 @@ export default function TechPartners() {
 
             {/* Connection Lines */}
             <div className="flex justify-center mb-4 md:mb-6">
-              <div className="w-px h-6 md:h-8 bg-gray-300"></div>
+              <div className="w-px h-6 md:h-8 bg-primary/30"></div>
             </div>
 
             {/* API Layer */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-              <div className="bg-gray-100 rounded-xl p-4 md:p-5 text-center border-2 border-transparent hover:border-primary/30 transition-colors">
+              <div className="bg-primary/5 rounded-xl p-4 md:p-5 text-center border border-primary/20 hover:bg-primary/10 transition-colors">
                 <div className="text-gray-800 font-semibold mb-1 md:mb-2 text-sm md:text-base">Nium API</div>
-                <div className="text-xs text-gray-500">{t("partners.arch.niumApi")}</div>
+                <div className="text-xs text-gray-600">{t("partners.arch.niumApi")}</div>
               </div>
-              <div className="bg-gray-100 rounded-xl p-4 md:p-5 text-center border-2 border-transparent hover:border-primary/30 transition-colors">
+              <div className="bg-primary/5 rounded-xl p-4 md:p-5 text-center border border-primary/20 hover:bg-primary/10 transition-colors">
                 <div className="text-gray-800 font-semibold mb-1 md:mb-2 text-sm md:text-base">Kraken API</div>
-                <div className="text-xs text-gray-500">{t("partners.arch.krakenApi")}</div>
+                <div className="text-xs text-gray-600">{t("partners.arch.krakenApi")}</div>
               </div>
-              <div className="bg-gray-100 rounded-xl p-4 md:p-5 text-center border-2 border-transparent hover:border-primary/30 transition-colors">
+              <div className="bg-primary/5 rounded-xl p-4 md:p-5 text-center border border-primary/20 hover:bg-primary/10 transition-colors">
                 <div className="text-gray-800 font-semibold mb-1 md:mb-2 text-sm md:text-base">Twelve Data API</div>
-                <div className="text-xs text-gray-500">{t("partners.arch.twelvedataApi")}</div>
+                <div className="text-xs text-gray-600">{t("partners.arch.twelvedataApi")}</div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* VISA Debit Cards */}
+        <div className="mt-10 md:mt-16 bg-primary/10 rounded-2xl p-6 md:p-10 border border-primary/20">
+          <div className="text-center mb-6 md:mb-8">
+            <div className="inline-flex items-center gap-2 bg-primary/20 px-4 py-2 rounded-full text-sm font-medium text-primary mb-4">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+              </svg>
+              {language === "de" ? "Digitale & Physische VISA Debitkarten" : "Digital & Physical VISA Debit Cards"}
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              {language === "de" ? "Weltweit bezahlen mit Neo" : "Pay Worldwide with Neo"}
+            </h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {language === "de"
+                ? "Deine VISA Debitkarte von NeoNeo Bank – akzeptiert an Millionen von Standorten weltweit. Kontaktlos, sicher und sofort einsatzbereit."
+                : "Your VISA debit card from NeoNeo Bank – accepted at millions of locations worldwide. Contactless, secure and ready to use instantly."}
+            </p>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
+            <div className="bg-white rounded-xl p-5 text-center shadow-sm border border-primary/10">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">200+</div>
+              <div className="text-sm text-gray-600">
+                {language === "de" ? "Länder & Territorien" : "Countries & Territories"}
+              </div>
+            </div>
+            <div className="bg-white rounded-xl p-5 text-center shadow-sm border border-primary/10">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">130M+</div>
+              <div className="text-sm text-gray-600">
+                {language === "de" ? "Akzeptanzstellen" : "Merchant Locations"}
+              </div>
+            </div>
+            <div className="bg-white rounded-xl p-5 text-center shadow-sm border border-primary/10">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">2M+</div>
+              <div className="text-sm text-gray-600">
+                {language === "de" ? "ATMs weltweit" : "ATMs Worldwide"}
+              </div>
+            </div>
+          </div>
+
+          {/* Features */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {[
+              { icon: "💳", label: language === "de" ? "Kontaktlos zahlen" : "Contactless Payment" },
+              { icon: "📱", label: language === "de" ? "Apple & Google Pay" : "Apple & Google Pay" },
+              { icon: "🔒", label: language === "de" ? "3D Secure" : "3D Secure" },
+              { icon: "🌍", label: language === "de" ? "Weltweit nutzbar" : "Use Globally" },
+            ].map((feature, index) => (
+              <div key={index} className="bg-white/80 rounded-lg p-3 md:p-4 text-center border border-primary/10">
+                <div className="text-2xl mb-1">{feature.icon}</div>
+                <div className="text-xs md:text-sm text-gray-700 font-medium">{feature.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Multi Currency Accounts */}
+        <div className="mt-10 md:mt-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-6 md:p-10 text-white">
+          <div className="text-center mb-6 md:mb-8">
+            <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {language === "de" ? "Multi-Währungs-Konten" : "Multi Currency Accounts"}
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold mb-3">
+              {language === "de" ? "190+ Globale Währungen" : "190+ Global Currencies"}
+            </h3>
+            <p className="text-white/80 max-w-2xl mx-auto">
+              {language === "de"
+                ? "Halte, kaufe und verkaufe Währungen aus aller Welt in Echtzeit. Keine versteckten Gebühren, faire Wechselkurse."
+                : "Hold, buy and sell currencies from around the world in real-time. No hidden fees, fair exchange rates."}
+            </p>
+          </div>
+
+          {/* Currency Grid */}
+          <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2 md:gap-3">
+            {[
+              { code: "EUR", name: "Euro" },
+              { code: "USD", name: "US Dollar" },
+              { code: "GBP", name: "British Pound" },
+              { code: "CHF", name: "Swiss Franc" },
+              { code: "JPY", name: "Japanese Yen" },
+              { code: "AUD", name: "Australian Dollar" },
+              { code: "CAD", name: "Canadian Dollar" },
+              { code: "CNY", name: "Chinese Yuan" },
+              { code: "HKD", name: "Hong Kong Dollar" },
+              { code: "SGD", name: "Singapore Dollar" },
+              { code: "NZD", name: "New Zealand Dollar" },
+              { code: "SEK", name: "Swedish Krona" },
+              { code: "NOK", name: "Norwegian Krone" },
+              { code: "DKK", name: "Danish Krone" },
+              { code: "PLN", name: "Polish Zloty" },
+              { code: "CZK", name: "Czech Koruna" },
+              { code: "HUF", name: "Hungarian Forint" },
+              { code: "TRY", name: "Turkish Lira" },
+              { code: "ZAR", name: "South African Rand" },
+              { code: "MXN", name: "Mexican Peso" },
+              { code: "BRL", name: "Brazilian Real" },
+              { code: "INR", name: "Indian Rupee" },
+              { code: "KRW", name: "South Korean Won" },
+              { code: "THB", name: "Thai Baht" },
+              { code: "IDR", name: "Indonesian Rupiah" },
+              { code: "MYR", name: "Malaysian Ringgit" },
+              { code: "PHP", name: "Philippine Peso" },
+              { code: "AED", name: "UAE Dirham" },
+              { code: "SAR", name: "Saudi Riyal" },
+              { code: "ILS", name: "Israeli Shekel" },
+            ].map((currency) => (
+              <div
+                key={currency.code}
+                className="bg-white/10 hover:bg-white/20 rounded-lg p-2 md:p-3 text-center transition-colors cursor-default group"
+                title={currency.name}
+              >
+                <div className="text-xs md:text-sm font-bold">{currency.code}</div>
+              </div>
+            ))}
+            <div className="bg-white/10 rounded-lg p-2 md:p-3 text-center flex items-center justify-center">
+              <span className="text-xs md:text-sm font-medium">+160</span>
+            </div>
+          </div>
+
+          {/* Popular Pairs */}
+          <div className="mt-6 md:mt-8 pt-6 border-t border-white/20">
+            <p className="text-center text-white/60 text-xs mb-4">
+              {language === "de" ? "Beliebte Währungspaare" : "Popular Currency Pairs"}
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 md:gap-3">
+              {["EUR/USD", "GBP/EUR", "USD/CHF", "EUR/GBP", "USD/JPY", "AUD/USD", "EUR/CHF", "GBP/USD"].map((pair) => (
+                <span key={pair} className="bg-white/10 px-3 py-1.5 rounded-full text-xs md:text-sm font-medium">
+                  {pair}
+                </span>
+              ))}
             </div>
           </div>
         </div>

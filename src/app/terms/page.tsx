@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { ArrowLeft } from "lucide-react";
 import LegalDisclaimer from "@/components/LegalDisclaimer";
+import { COMPANY } from "@/constants/company";
 
 export default function TermsPage() {
   const { language } = useLanguage();
@@ -32,7 +33,7 @@ export default function TermsPage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Geltungsbereich</h2>
                 <p className="mb-4">
-                  Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung der Website und zukünftigen Dienstleistungen der LUNA LTD, handelnd als NeoNeo Bank (nachfolgend "Anbieter" genannt).
+                  Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung der Website und zukünftigen Dienstleistungen der {COMPANY.name}, handelnd als {COMPANY.tradingAs} (nachfolgend &quot;Anbieter&quot; genannt).
                 </p>
                 <p className="mb-4">
                   Mit der Nutzung unserer Website und/oder Dienstleistungen erklären Sie sich mit diesen AGB einverstanden. Wenn Sie mit diesen Bedingungen nicht einverstanden sind, nutzen Sie unsere Website oder Dienstleistungen bitte nicht.
@@ -42,13 +43,13 @@ export default function TermsPage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Anbieter</h2>
                 <p className="mb-4">
-                  <strong>LUNA LTD</strong><br />
-                  (Handelnd als NeoNeo Bank)<br />
-                  20 Wenlock Road<br />
-                  London, N1 7GU<br />
-                  United Kingdom<br /><br />
-                  Company Number: 16121231<br />
-                  E-Mail: hello@neoneobank.de
+                  <strong>{COMPANY.name}</strong><br />
+                  (Handelnd als {COMPANY.tradingAs})<br />
+                  {COMPANY.address.street}<br />
+                  {COMPANY.address.city}, {COMPANY.address.postcode}<br />
+                  {COMPANY.address.country}<br /><br />
+                  Company Number: {COMPANY.companyNumber}<br />
+                  E-Mail: {COMPANY.contact.email}
                 </p>
               </section>
 
@@ -164,7 +165,7 @@ export default function TermsPage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Scope</h2>
                 <p className="mb-4">
-                  These Terms of Service apply to the use of the website and future services of LUNA LTD, trading as NeoNeo Bank (hereinafter referred to as "Provider").
+                  These Terms of Service apply to the use of the website and future services of {COMPANY.name}, trading as {COMPANY.tradingAs} (hereinafter referred to as &quot;Provider&quot;).
                 </p>
                 <p className="mb-4">
                   By using our website and/or services, you agree to these Terms. If you do not agree with these terms, please do not use our website or services.
@@ -174,13 +175,13 @@ export default function TermsPage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Provider</h2>
                 <p className="mb-4">
-                  <strong>LUNA LTD</strong><br />
-                  (Trading as NeoNeo Bank)<br />
-                  20 Wenlock Road<br />
-                  London, N1 7GU<br />
-                  United Kingdom<br /><br />
-                  Company Number: 16121231<br />
-                  Email: hello@neoneobank.de
+                  <strong>{COMPANY.name}</strong><br />
+                  (Trading as {COMPANY.tradingAs})<br />
+                  {COMPANY.address.street}<br />
+                  {COMPANY.address.city}, {COMPANY.address.postcode}<br />
+                  {COMPANY.address.country}<br /><br />
+                  Company Number: {COMPANY.companyNumber}<br />
+                  Email: {COMPANY.contact.email}
                 </p>
               </section>
 

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { ArrowLeft } from "lucide-react";
 import LegalDisclaimer from "@/components/LegalDisclaimer";
+import { COMPANY } from "@/constants/company";
 
 export default function ImprintPage() {
   const { language } = useLanguage();
@@ -32,33 +33,33 @@ export default function ImprintPage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Angaben gemäß § 5 TMG / Companies Act 2006</h2>
                 <p className="mb-4">
-                  <strong>NEONEO HOLDINGS LTD</strong><br />
-                  (Handelnd als NeoNeo Bank)
+                  <strong>{COMPANY.name}</strong><br />
+                  (Handelnd als {COMPANY.tradingAs})
                 </p>
                 <p className="mb-4">
-                  20 Wenlock Road<br />
-                  London, N1 7GU<br />
-                  United Kingdom
+                  {COMPANY.address.street}<br />
+                  {COMPANY.address.city}, {COMPANY.address.postcode}<br />
+                  {COMPANY.address.country}
                 </p>
               </section>
 
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Handelsregister</h2>
-                <p className="mb-2"><strong>Registergericht:</strong> Companies House, England and Wales</p>
-                <p className="mb-2"><strong>Registernummer:</strong> 16121231</p>
+                <p className="mb-2"><strong>Registergericht:</strong> Companies House, {COMPANY.registeredIn}</p>
+                <p className="mb-2"><strong>Registernummer:</strong> {COMPANY.companyNumber}</p>
                 <p className="mb-2"><strong>Gründungsdatum:</strong> 5. Dezember 2024</p>
-                <p className="mb-2"><strong>Rechtsform:</strong> Private Limited Company (Ltd)</p>
+                <p className="mb-2"><strong>Rechtsform:</strong> {COMPANY.companyType}</p>
               </section>
 
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Geschäftsführung</h2>
-                <p className="mb-2"><strong>CEO / Director:</strong> Paul Kappel</p>
+                <p className="mb-2"><strong>CEO / Director:</strong> {COMPANY.management.ceo}</p>
               </section>
 
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Kontakt</h2>
-                <p className="mb-2"><strong>E-Mail:</strong> hello@neoneobank.de</p>
-                <p className="mb-2"><strong>Telegram:</strong> @neoneobank</p>
+                <p className="mb-2"><strong>E-Mail:</strong> {COMPANY.contact.email}</p>
+                <p className="mb-2"><strong>Telegram:</strong> {COMPANY.contact.telegram}</p>
               </section>
 
               <section className="mb-10">
@@ -72,10 +73,10 @@ export default function ImprintPage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
                 <p className="mb-4">
-                  Paul Kappel<br />
-                  20 Wenlock Road<br />
-                  London, N1 7GU<br />
-                  United Kingdom
+                  {COMPANY.management.ceo}<br />
+                  {COMPANY.address.street}<br />
+                  {COMPANY.address.city}, {COMPANY.address.postcode}<br />
+                  {COMPANY.address.country}
                 </p>
               </section>
 
@@ -134,33 +135,33 @@ export default function ImprintPage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Company Information (Companies Act 2006)</h2>
                 <p className="mb-4">
-                  <strong>NEONEO HOLDINGS LTD</strong><br />
-                  (Trading as NeoNeo Bank)
+                  <strong>{COMPANY.name}</strong><br />
+                  (Trading as {COMPANY.tradingAs})
                 </p>
                 <p className="mb-4">
-                  20 Wenlock Road<br />
-                  London, N1 7GU<br />
-                  United Kingdom
+                  {COMPANY.address.street}<br />
+                  {COMPANY.address.city}, {COMPANY.address.postcode}<br />
+                  {COMPANY.address.country}
                 </p>
               </section>
 
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Company Registration</h2>
-                <p className="mb-2"><strong>Registered at:</strong> Companies House, England and Wales</p>
-                <p className="mb-2"><strong>Company Number:</strong> 16121231</p>
-                <p className="mb-2"><strong>Date of Incorporation:</strong> 5th December 2024</p>
-                <p className="mb-2"><strong>Company Type:</strong> Private Limited Company (Ltd)</p>
+                <p className="mb-2"><strong>Registered at:</strong> Companies House, {COMPANY.registeredIn}</p>
+                <p className="mb-2"><strong>Company Number:</strong> {COMPANY.companyNumber}</p>
+                <p className="mb-2"><strong>Date of Incorporation:</strong> {COMPANY.incorporationDate}</p>
+                <p className="mb-2"><strong>Company Type:</strong> {COMPANY.companyType}</p>
               </section>
 
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Management</h2>
-                <p className="mb-2"><strong>CEO / Director:</strong> Paul Kappel</p>
+                <p className="mb-2"><strong>CEO / Director:</strong> {COMPANY.management.ceo}</p>
               </section>
 
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact</h2>
-                <p className="mb-2"><strong>Email:</strong> hello@neoneobank.de</p>
-                <p className="mb-2"><strong>Telegram:</strong> @neoneobank</p>
+                <p className="mb-2"><strong>Email:</strong> {COMPANY.contact.email}</p>
+                <p className="mb-2"><strong>Telegram:</strong> {COMPANY.contact.telegram}</p>
               </section>
 
               <section className="mb-10">
@@ -174,10 +175,10 @@ export default function ImprintPage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Responsible for Content</h2>
                 <p className="mb-4">
-                  Paul Kappel<br />
-                  20 Wenlock Road<br />
-                  London, N1 7GU<br />
-                  United Kingdom
+                  {COMPANY.management.ceo}<br />
+                  {COMPANY.address.street}<br />
+                  {COMPANY.address.city}, {COMPANY.address.postcode}<br />
+                  {COMPANY.address.country}
                 </p>
               </section>
 

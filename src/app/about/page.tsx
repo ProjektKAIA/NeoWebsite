@@ -2,8 +2,9 @@
 
 import { Header, Footer, CookieBanner } from "@/components";
 import { useLanguage } from "@/context/LanguageContext";
+import { COMPANY } from "@/constants/company";
 import Link from "next/link";
-import { ArrowLeft, Target, Users, Globe, Rocket, Shield, Heart } from "lucide-react";
+import { ArrowLeft, Target, Users, Globe, Rocket, Shield, Heart, Headphones, MessageCircle } from "lucide-react";
 
 export default function AboutPage() {
   const { language } = useLanguage();
@@ -38,6 +39,11 @@ export default function AboutPage() {
       icon: Heart,
       title: "Transparenz",
       desc: "Keine versteckten Gebühren. Was du siehst, ist was du bekommst."
+    },
+    {
+      icon: Headphones,
+      title: "Echter Support",
+      desc: "Schluss mit endlosen Warteschleifen und Chatbots. Neo, unser KI-Assistent, löst deine Probleme sofort – rund um die Uhr, persönlich und auf den Punkt."
     }
   ] : [
     {
@@ -69,18 +75,23 @@ export default function AboutPage() {
       icon: Heart,
       title: "Transparency",
       desc: "No hidden fees. What you see is what you get."
+    },
+    {
+      icon: Headphones,
+      title: "Real Support",
+      desc: "No more endless hold times and useless chatbots. Neo, our AI assistant, solves your problems instantly – 24/7, personal, and to the point."
     }
   ];
 
   const timeline = language === "de" ? [
-    { year: "2024", title: "Gründung", desc: "NEONEO HOLDINGS LTD wird in London gegründet" },
+    { year: "2024", title: "Gründung", desc: `${COMPANY.name} wird in London gegründet` },
     { year: "2025", title: "Entwicklung", desc: "Aufbau der Infrastruktur und Partnerschaften" },
-    { year: "2026", title: "Launch", desc: "Geplanter Start der NeoNeo Bank App" },
+    { year: "2026", title: "Launch", desc: `Geplanter Start der ${COMPANY.tradingAs} App` },
     { year: "Zukunft", title: "Wachstum", desc: "Expansion in weitere Märkte weltweit" }
   ] : [
-    { year: "2024", title: "Foundation", desc: "NEONEO HOLDINGS LTD founded in London" },
+    { year: "2024", title: "Foundation", desc: `${COMPANY.name} founded in London` },
     { year: "2025", title: "Development", desc: "Building infrastructure and partnerships" },
-    { year: "2026", title: "Launch", desc: "Planned launch of NeoNeo Bank app" },
+    { year: "2026", title: "Launch", desc: `Planned launch of ${COMPANY.tradingAs} app` },
     { year: "Future", title: "Growth", desc: "Expansion into more markets worldwide" }
   ];
 
@@ -155,7 +166,7 @@ export default function AboutPage() {
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white/20 rounded-lg p-4 text-center">
-                    <div className="text-2xl font-bold">110+</div>
+                    <div className="text-2xl font-bold">190+</div>
                     <div className="text-sm text-white/80">{language === "de" ? "Währungen" : "Currencies"}</div>
                   </div>
                   <div className="bg-white/20 rounded-lg p-4 text-center">
@@ -239,9 +250,9 @@ export default function AboutPage() {
                   {language === "de" ? "Registrierte Firma" : "Registered Company"}
                 </h3>
                 <p className="text-gray-600">
-                  <strong>NEONEO HOLDINGS LTD</strong><br />
-                  Company No. 16121231<br />
-                  {language === "de" ? "Registriert in England & Wales" : "Registered in England & Wales"}
+                  <strong>{COMPANY.name}</strong><br />
+                  Company No. {COMPANY.companyNumber}<br />
+                  {language === "de" ? `Registriert in ${COMPANY.registeredIn}` : `Registered in ${COMPANY.registeredIn}`}
                 </p>
               </div>
               <div className="bg-gray-50 rounded-xl p-6">
@@ -249,9 +260,9 @@ export default function AboutPage() {
                   {language === "de" ? "Firmensitz" : "Registered Office"}
                 </h3>
                 <p className="text-gray-600">
-                  20 Wenlock Road<br />
-                  London, N1 7GU<br />
-                  United Kingdom
+                  {COMPANY.address.street}<br />
+                  {COMPANY.address.city}, {COMPANY.address.postcode}<br />
+                  {COMPANY.address.country}
                 </p>
               </div>
             </div>

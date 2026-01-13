@@ -26,7 +26,7 @@ export default function FeaturesPage() {
         },
         {
           title: "Multi-Währungs-Wallet",
-          desc: "Halte, kaufe und verkaufe über 110+ globale Währungen in einer App.",
+          desc: "Halte, kaufe und verkaufe über 190+ globale Währungen in einer App.",
           icon: Globe
         },
         {
@@ -189,7 +189,7 @@ export default function FeaturesPage() {
         },
         {
           title: "Multi-Currency Wallet",
-          desc: "Hold, buy and sell over 110+ global currencies in one app.",
+          desc: "Hold, buy and sell over 190+ global currencies in one app.",
           icon: Globe
         },
         {

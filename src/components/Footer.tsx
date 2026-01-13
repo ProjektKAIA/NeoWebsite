@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
+import { COMPANY, getCopyrightText } from "@/constants/company";
 
 export default function Footer() {
   const { language, t } = useLanguage();
@@ -16,8 +17,8 @@ export default function Footer() {
   ];
 
   const productLinks = [
-    { href: "#features", labelKey: "footer.features" },
-    { href: "#about", labelKey: "footer.about" },
+    { href: "/features", labelKey: "footer.features" },
+    { href: "/about", labelKey: "footer.about" },
     { href: "#contact", labelKey: "footer.support" },
   ];
 
@@ -32,12 +33,12 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-6">
               <Image
                 src="/logo.png"
-                alt="NeoNeo Bank Logo"
+                alt={`${COMPANY.tradingAs} Logo`}
                 width={40}
                 height={40}
                 className="w-10 h-10"
               />
-              <span className="text-2xl font-bold">NeoNeo Bank</span>
+              <span className="text-2xl font-bold">{COMPANY.tradingAs}</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
               {t("footer.description")}
@@ -73,17 +74,17 @@ export default function Footer() {
             {/* Contact & Links */}
             <div className="flex flex-col gap-3">
               <a
-                href="mailto:hello@neoneobank.de"
+                href={`mailto:${COMPANY.contact.email}`}
                 className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <rect x="2" y="4" width="20" height="16" rx="2"/>
                   <path d="M22 6L12 13L2 6"/>
                 </svg>
-                <span className="text-sm">hello@neoneobank.de</span>
+                <span className="text-sm">{COMPANY.contact.email}</span>
               </a>
               <a
-                href="https://neoneobank.com"
+                href={`https://${COMPANY.contact.website}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
@@ -92,7 +93,7 @@ export default function Footer() {
                   <circle cx="12" cy="12" r="10"/>
                   <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                 </svg>
-                <span className="text-sm">neoneobank.com</span>
+                <span className="text-sm">{COMPANY.contact.website}</span>
               </a>
             </div>
           </div>
@@ -141,17 +142,17 @@ export default function Footer() {
             {/* Registered Company */}
             <div>
               <p className="font-medium text-gray-300 mb-2">{t("footer.registeredCompany")}</p>
-              <p>NEONEO HOLDINGS LTD</p>
-              <p>Company No. 16121231</p>
+              <p>{COMPANY.name}</p>
+              <p>Company No. {COMPANY.companyNumber}</p>
               <p>{t("footer.registeredIn")}</p>
             </div>
 
             {/* Address */}
             <div>
               <p className="font-medium text-gray-300 mb-2">{t("footer.registeredOffice")}</p>
-              <p>20 Wenlock Road</p>
-              <p>London, N1 7GU</p>
-              <p>United Kingdom</p>
+              <p>{COMPANY.address.street}</p>
+              <p>{COMPANY.address.city}, {COMPANY.address.postcode}</p>
+              <p>{COMPANY.address.country}</p>
             </div>
           </div>
         </div>
@@ -162,7 +163,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 md:py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
             <p className="text-gray-500 text-xs md:text-sm text-center md:text-left">
-              © {currentYear} NEONEO HOLDINGS LTD trading as NeoNeo Bank. {t("footer.allRights")}
+              {getCopyrightText(currentYear, t("footer.allRights"))}
             </p>
             <div className="flex items-center gap-4 md:gap-6 text-xs md:text-sm text-gray-500">
               <span className="flex items-center gap-2">

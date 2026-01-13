@@ -30,7 +30,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Feature Highlights
     "highlights.multiCurrency.title": "Multi Currency Wallet",
-    "highlights.multiCurrency.desc": "Keep, Buy and Sell over 110+ Global National Currencies",
+    "highlights.multiCurrency.desc": "Keep, Buy and Sell over 190+ Global National Currencies",
 
     "highlights.onboarding.title": "Easy onboarding",
     "highlights.onboarding.desc": "Easy onboarding for UK & All EU Citizens",
@@ -158,7 +158,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Feature Highlights
     "highlights.multiCurrency.title": "Multi-Währungs-Wallet",
-    "highlights.multiCurrency.desc": "Halten, Kaufen und Verkaufen von über 110+ globalen Landeswährungen",
+    "highlights.multiCurrency.desc": "Halten, Kaufen und Verkaufen von über 190+ globalen Landeswährungen",
 
     "highlights.onboarding.title": "Einfache Registrierung",
     "highlights.onboarding.desc": "Einfache Registrierung für UK & alle EU-Bürger",
