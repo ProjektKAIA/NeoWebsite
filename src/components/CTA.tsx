@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
+import { COMPANY } from "@/constants/company";
 
 export default function CTA() {
   const { t } = useLanguage();
@@ -26,9 +27,7 @@ export default function CTA() {
 
           {/* CTA Button */}
           <a
-            href="https://t.me/neoneobank"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`mailto:${COMPANY.contact.email}`}
             className="btn-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4 inline-block"
           >
             {t("cta.button")}

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { COMPANY } from "@/constants/company";
 
 // Language data with flags
 const languages = [
@@ -195,13 +196,13 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-3">
             <Image
               src="/logo.png"
-              alt="NeoNeo Bank Logo"
+              alt={`${COMPANY.tradingAs} Logo`}
               width={40}
               height={40}
               className="w-10 h-10"
             />
             <span className="text-xl font-semibold text-gray-900">
-              NeoNeo Bank
+              {COMPANY.tradingAs}
             </span>
           </Link>
 
@@ -222,9 +223,7 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-4">
             <LanguageSelector />
             <a
-              href="https://t.me/neoneobank"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`mailto:${COMPANY.contact.email}`}
               className="btn-primary text-sm"
             >
               {t("nav.contactUs")}
@@ -259,9 +258,7 @@ export default function Header() {
                 </Link>
               ))}
               <a
-                href="https://t.me/neoneobank"
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`mailto:${COMPANY.contact.email}`}
                 className="btn-primary text-sm text-center mt-2"
               >
                 {t("nav.contactUs")}

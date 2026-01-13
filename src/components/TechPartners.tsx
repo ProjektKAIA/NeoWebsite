@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
+import { COMPANY } from "@/constants/company";
 
 // Nium Logo
 function NiumLogo({ className = "h-8" }: { className?: string }) {
@@ -167,7 +168,7 @@ export default function TechPartners() {
           <div className="max-w-4xl mx-auto">
             {/* NeoNeo Bank App Layer */}
             <div className="bg-gradient-to-r from-primary to-primary/80 rounded-xl md:rounded-2xl p-4 md:p-6 text-white text-center mb-4 md:mb-6">
-              <div className="text-base md:text-lg font-semibold mb-2">NeoNeo Bank App</div>
+              <div className="text-base md:text-lg font-semibold mb-2">{COMPANY.tradingAs} App</div>
               <div className="flex flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-sm opacity-90">
                 <span className="bg-white/20 px-2 md:px-3 py-1 rounded-full">{t("partners.arch.banking")}</span>
                 <span className="bg-white/20 px-2 md:px-3 py-1 rounded-full">{t("partners.arch.crypto")}</span>
@@ -213,8 +214,8 @@ export default function TechPartners() {
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
               {language === "de"
-                ? "Deine VISA Debitkarte von NeoNeo Bank – akzeptiert an Millionen von Standorten weltweit. Kontaktlos, sicher und sofort einsatzbereit."
-                : "Your VISA debit card from NeoNeo Bank – accepted at millions of locations worldwide. Contactless, secure and ready to use instantly."}
+                ? `Deine VISA Debitkarte von ${COMPANY.tradingAs} – akzeptiert an Millionen von Standorten weltweit. Kontaktlos, sicher und sofort einsatzbereit.`
+                : `Your VISA debit card from ${COMPANY.tradingAs} – accepted at millions of locations worldwide. Contactless, secure and ready to use instantly.`}
             </p>
           </div>
 

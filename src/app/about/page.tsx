@@ -140,8 +140,8 @@ export default function AboutPage() {
                 <div className="space-y-4 text-gray-600">
                   <p>
                     {language === "de"
-                      ? "NeoNeo Bank wurde aus einer einfachen Überzeugung heraus gegründet: Jeder verdient Zugang zu modernen, fairen und transparenten Finanzdienstleistungen."
-                      : "NeoNeo Bank was founded from a simple belief: everyone deserves access to modern, fair, and transparent financial services."}
+                      ? `${COMPANY.tradingAs} wurde aus einer einfachen Überzeugung heraus gegründet: Jeder verdient Zugang zu modernen, fairen und transparenten Finanzdienstleistungen.`
+                      : `${COMPANY.tradingAs} was founded from a simple belief: everyone deserves access to modern, fair, and transparent financial services.`}
                   </p>
                   <p>
                     {language === "de"
@@ -150,8 +150,8 @@ export default function AboutPage() {
                   </p>
                   <p>
                     {language === "de"
-                      ? "Mit NeoNeo Bank schaffen wir eine Alternative: Eine Bank, die dich versteht, egal wo du bist oder wohin du gehst."
-                      : "With NeoNeo Bank, we're creating an alternative: A bank that understands you, no matter where you are or where you're going."}
+                      ? `Mit ${COMPANY.tradingAs} schaffen wir eine Alternative: Eine Bank, die dich versteht, egal wo du bist oder wohin du gehst.`
+                      : `With ${COMPANY.tradingAs}, we're creating an alternative: A bank that understands you, no matter where you are or where you're going.`}
                   </p>
                 </div>
               </div>
@@ -281,9 +281,7 @@ export default function AboutPage() {
                 : "Contact us and be the first to know when we launch."}
             </p>
             <a
-              href="https://t.me/neoneobank"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`mailto:${COMPANY.contact.email}`}
               className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors"
             >
               {language === "de" ? "Kontaktiere uns" : "Contact Us"}

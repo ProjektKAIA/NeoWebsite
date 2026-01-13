@@ -25,7 +25,6 @@ export const COMPANY = {
   // Contact information
   contact: {
     email: "hello@neoneobank.de",
-    telegram: "@neoneobank",
     website: "neoneobank.com",
   },
 

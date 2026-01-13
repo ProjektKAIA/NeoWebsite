@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
+import { COMPANY } from "@/constants/company";
 import { AlertTriangle } from "lucide-react";
 
 export default function LegalDisclaimer() {
@@ -20,15 +21,15 @@ export default function LegalDisclaimer() {
             {language === "de" ? (
               <>
                 Dieses Dokument befindet sich derzeit in rechtlicher Überprüfung und wird fortlaufend aktualisiert, um den geltenden gesetzlichen Anforderungen zu entsprechen. Die vorliegenden Bestimmungen stellen einen vorläufigen Stand dar und können sich ohne vorherige Ankündigung ändern. Wir empfehlen, diese Seite regelmäßig auf Aktualisierungen zu überprüfen. Bei Fragen wenden Sie sich bitte an{" "}
-                <a href="mailto:hello@neoneobank.de" className="underline hover:text-amber-900">
-                  hello@neoneobank.de
+                <a href={`mailto:${COMPANY.contact.email}`} className="underline hover:text-amber-900">
+                  {COMPANY.contact.email}
                 </a>.
               </>
             ) : (
               <>
                 This document is currently under legal review and is being continuously updated to comply with applicable legal requirements. The provisions herein represent a preliminary version and are subject to change without prior notice. We recommend checking this page regularly for updates. For questions, please contact{" "}
-                <a href="mailto:hello@neoneobank.de" className="underline hover:text-amber-900">
-                  hello@neoneobank.de
+                <a href={`mailto:${COMPANY.contact.email}`} className="underline hover:text-amber-900">
+                  {COMPANY.contact.email}
                 </a>.
               </>
             )}

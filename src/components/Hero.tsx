@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, EffectCoverflow } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import { useLanguage } from "@/context/LanguageContext";
+import { COMPANY } from "@/constants/company";
 
 // Import Swiper styles
 import "swiper/css";
@@ -139,7 +140,7 @@ export default function Hero() {
                   ) : (
                     <Image
                       src={item.src}
-                      alt={item.alt || "NeoNeo Bank App"}
+                      alt={item.alt || `${COMPANY.tradingAs} App`}
                       width={400}
                       height={800}
                       className="drop-shadow-2xl w-full h-auto"

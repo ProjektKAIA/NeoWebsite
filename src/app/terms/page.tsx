@@ -156,7 +156,7 @@ export default function TermsPage() {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">13. Kontakt</h2>
                 <p className="mb-4">
                   Bei Fragen zu diesen AGB wenden Sie sich bitte an:<br />
-                  E-Mail: hello@neoneobank.de
+                  E-Mail: {COMPANY.contact.email}
                 </p>
               </section>
             </>
@@ -288,7 +288,7 @@ export default function TermsPage() {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">13. Contact</h2>
                 <p className="mb-4">
                   If you have any questions about these Terms, please contact us at:<br />
-                  Email: hello@neoneobank.de
+                  Email: {COMPANY.contact.email}
                 </p>
               </section>
             </>

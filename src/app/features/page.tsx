@@ -2,6 +2,7 @@
 
 import { Header, Footer, CookieBanner } from "@/components";
 import { useLanguage } from "@/context/LanguageContext";
+import { COMPANY } from "@/constants/company";
 import Link from "next/link";
 import { ArrowLeft, Banknote, CreditCard, ArrowLeftRight, Bitcoin, TrendingUp, MessageCircle, Shield, Coins, Globe, Smartphone, Zap, Lock } from "lucide-react";
 
@@ -362,8 +363,8 @@ export default function FeaturesPage() {
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               {language === "de"
-                ? "Entdecke alle Features, die NeoNeo Bank zur ultimativen Banking-App machen."
-                : "Discover all the features that make NeoNeo Bank the ultimate banking app."}
+                ? `Entdecke alle Features, die ${COMPANY.tradingAs} zur ultimativen Banking-App machen.`
+                : `Discover all the features that make ${COMPANY.tradingAs} the ultimate banking app.`}
             </p>
           </div>
         </section>
@@ -410,14 +411,14 @@ export default function FeaturesPage() {
             </h2>
             <p className="text-white/80 mb-8">
               {language === "de"
-                ? "Werde einer der Ersten, die NeoNeo Bank erleben."
-                : "Be one of the first to experience NeoNeo Bank."}
+                ? `Werde einer der Ersten, die ${COMPANY.tradingAs} erleben.`
+                : `Be one of the first to experience ${COMPANY.tradingAs}.`}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/pricing" className="bg-white text-primary px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors">
                 {language === "de" ? "Preise ansehen" : "View Pricing"}
               </Link>
-              <a href="https://t.me/neoneobank" target="_blank" rel="noopener noreferrer" className="bg-white/20 text-white px-8 py-3 rounded-xl font-semibold hover:bg-white/30 transition-colors">
+              <a href={`mailto:${COMPANY.contact.email}`} className="bg-white/20 text-white px-8 py-3 rounded-xl font-semibold hover:bg-white/30 transition-colors">
                 {language === "de" ? "Kontaktiere uns" : "Contact Us"}
               </a>
             </div>

@@ -59,7 +59,6 @@ export default function ImprintPage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Kontakt</h2>
                 <p className="mb-2"><strong>E-Mail:</strong> {COMPANY.contact.email}</p>
-                <p className="mb-2"><strong>Telegram:</strong> {COMPANY.contact.telegram}</p>
               </section>
 
               <section className="mb-10">
@@ -161,7 +160,6 @@ export default function ImprintPage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact</h2>
                 <p className="mb-2"><strong>Email:</strong> {COMPANY.contact.email}</p>
-                <p className="mb-2"><strong>Telegram:</strong> {COMPANY.contact.telegram}</p>
               </section>
 
               <section className="mb-10">

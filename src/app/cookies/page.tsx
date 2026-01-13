@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { ArrowLeft } from "lucide-react";
 import LegalDisclaimer from "@/components/LegalDisclaimer";
+import { COMPANY } from "@/constants/company";
 
 export default function CookiesPage() {
   const { language } = useLanguage();
@@ -144,7 +145,7 @@ export default function CookiesPage() {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Kontakt</h2>
                 <p className="mb-4">
                   Wenn Sie Fragen zu unserer Verwendung von Cookies haben, kontaktieren Sie uns bitte unter:<br />
-                  E-Mail: hello@neoneobank.de
+                  E-Mail: {COMPANY.contact.email}
                 </p>
               </section>
             </>
@@ -265,7 +266,7 @@ export default function CookiesPage() {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact</h2>
                 <p className="mb-4">
                   If you have any questions about our use of cookies, please contact us at:<br />
-                  Email: hello@neoneobank.de
+                  Email: {COMPANY.contact.email}
                 </p>
               </section>
             </>
