@@ -34,9 +34,9 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt={`${COMPANY.tradingAs} Logo`}
-                width={40}
-                height={40}
-                className="w-10 h-10"
+                width={56}
+                height={56}
+                className="w-14 h-14"
               />
               <span className="text-2xl font-bold">{COMPANY.tradingAs}</span>
             </div>

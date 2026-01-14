@@ -197,9 +197,9 @@ export default function Header() {
             <Image
               src="/logo.png"
               alt={`${COMPANY.tradingAs} Logo`}
-              width={40}
-              height={40}
-              className="w-10 h-10"
+              width={48}
+              height={48}
+              className="w-12 h-12"
             />
             <span className="text-xl font-semibold text-gray-900">
               {COMPANY.tradingAs}
