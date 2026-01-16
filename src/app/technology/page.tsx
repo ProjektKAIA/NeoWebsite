@@ -48,6 +48,19 @@ export default function TechnologyPage() {
         "Historische Daten & Analytics"
       ],
       color: "from-green-500 to-green-600"
+    },
+    {
+      name: "Saxo Bank",
+      category: "Stock Trading",
+      description: "Institutionelle Trading-Infrastruktur für Aktien, ETFs, Anleihen und mehr über Saxo Bank's OpenAPI.",
+      features: [
+        "Aktien & ETF Handel",
+        "Multi-Asset Ausführung",
+        "Portfolio Management",
+        "Regulierter EU Broker",
+        "Professionelle Trading-Tools"
+      ],
+      color: "from-orange-500 to-orange-600"
     }
   ] : [
     {
@@ -88,6 +101,19 @@ export default function TechnologyPage() {
         "Historical Data & Analytics"
       ],
       color: "from-green-500 to-green-600"
+    },
+    {
+      name: "Saxo Bank",
+      category: "Stock Trading",
+      description: "Institutional-grade trading infrastructure for stocks, ETFs, bonds and more via Saxo Bank's OpenAPI.",
+      features: [
+        "Stocks & ETF Trading",
+        "Multi-Asset Execution",
+        "Portfolio Management",
+        "Regulated EU Broker",
+        "Professional Trading Tools"
+      ],
+      color: "from-orange-500 to-orange-600"
     }
   ];
 
@@ -202,7 +228,7 @@ export default function TechnologyPage() {
               </div>
 
               {/* Partner APIs */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="bg-white rounded-xl p-5 border-2 border-blue-200 text-center hover:border-blue-400 transition-colors">
                   <div className="font-semibold text-gray-900 mb-1">Nium API</div>
                   <div className="text-xs text-gray-500">{language === "de" ? "IBAN, Karten, Zahlungen" : "IBAN, Cards, Payments"}</div>
@@ -214,6 +240,10 @@ export default function TechnologyPage() {
                 <div className="bg-white rounded-xl p-5 border-2 border-green-200 text-center hover:border-green-400 transition-colors">
                   <div className="font-semibold text-gray-900 mb-1">Twelve Data API</div>
                   <div className="text-xs text-gray-500">{language === "de" ? "Marktdaten & Analytics" : "Market Data & Analytics"}</div>
+                </div>
+                <div className="bg-white rounded-xl p-5 border-2 border-orange-200 text-center hover:border-orange-400 transition-colors">
+                  <div className="font-semibold text-gray-900 mb-1">Saxo API</div>
+                  <div className="text-xs text-gray-500">{language === "de" ? "Aktien & ETF Trading" : "Stock & ETF Trading"}</div>
                 </div>
               </div>
             </div>
