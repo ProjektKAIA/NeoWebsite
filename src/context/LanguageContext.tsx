@@ -23,7 +23,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.title1": "Smart money management",
     "hero.title2": "in your pocket",
     "hero.subtitle": "The Operating System for modern Banking.",
-    "hero.tagline": "Smart money builds empire",
+    "hero.tagline": "Made for your global money movements",
     "hero.comingSoon": "Coming soon",
     "hero.downloadOn": "Download on the",
     "hero.getItOn": "GET IT ON",
@@ -129,6 +129,12 @@ const translations: Record<Language, Record<string, string>> = {
     "partners.twelvedata.feature3": "25,000+ ETFs & Funds",
     "partners.twelvedata.feature4": "99.95% Uptime SLA",
 
+    "partners.saxo.desc": "Institutional-grade trading infrastructure for stocks, ETFs, bonds and more via Saxo Bank's OpenAPI.",
+    "partners.saxo.feature1": "Stocks & ETF Trading",
+    "partners.saxo.feature2": "Multi-Asset Execution",
+    "partners.saxo.feature3": "Portfolio Management",
+    "partners.saxo.feature4": "Regulated EU Broker",
+
     "partners.arch.banking": "Banking",
     "partners.arch.crypto": "Crypto",
     "partners.arch.investments": "Investments",
@@ -136,6 +142,7 @@ const translations: Record<Language, Record<string, string>> = {
     "partners.arch.niumApi": "IBAN, Cards, Payments",
     "partners.arch.krakenApi": "Crypto Trading & Custody",
     "partners.arch.twelvedataApi": "Market Data & Analytics",
+    "partners.arch.saxoApi": "Stock & ETF Trading",
 
     "partners.networks": "Connected to Global Payment Networks",
   },
@@ -151,7 +158,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.title1": "Smartes Geldmanagement",
     "hero.title2": "in deiner Tasche",
     "hero.subtitle": "Das Betriebssystem für modernes Banking.",
-    "hero.tagline": "Smartes Geld baut Imperien",
+    "hero.tagline": "Gemacht für deine globalen Geldbewegungen",
     "hero.comingSoon": "Bald verfügbar",
     "hero.downloadOn": "Laden im",
     "hero.getItOn": "JETZT BEI",
@@ -257,6 +264,12 @@ const translations: Record<Language, Record<string, string>> = {
     "partners.twelvedata.feature3": "25.000+ ETFs & Fonds",
     "partners.twelvedata.feature4": "99,95% Uptime SLA",
 
+    "partners.saxo.desc": "Institutionelle Trading-Infrastruktur für Aktien, ETFs, Anleihen und mehr über Saxo Bank's OpenAPI.",
+    "partners.saxo.feature1": "Aktien & ETF Handel",
+    "partners.saxo.feature2": "Multi-Asset Ausführung",
+    "partners.saxo.feature3": "Portfolio Management",
+    "partners.saxo.feature4": "Regulierter EU Broker",
+
     "partners.arch.banking": "Banking",
     "partners.arch.crypto": "Krypto",
     "partners.arch.investments": "Investments",
@@ -264,6 +277,7 @@ const translations: Record<Language, Record<string, string>> = {
     "partners.arch.niumApi": "IBAN, Karten, Zahlungen",
     "partners.arch.krakenApi": "Krypto-Trading & Verwahrung",
     "partners.arch.twelvedataApi": "Marktdaten & Analytics",
+    "partners.arch.saxoApi": "Aktien & ETF Trading",
 
     "partners.networks": "Verbunden mit globalen Zahlungsnetzwerken",
   },

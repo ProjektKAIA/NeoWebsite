@@ -38,6 +38,15 @@ function TwelveDataLogo({ className = "h-8" }: { className?: string }) {
   );
 }
 
+// Saxo Logo
+function SaxoLogo({ className = "h-8" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="4" y="28" fontFamily="system-ui, sans-serif" fontSize="24" fontWeight="700" fill="currentColor">SAXO</text>
+    </svg>
+  );
+}
+
 // VISA Logo
 function VisaLogo({ className = "h-6" }: { className?: string }) {
   return (
@@ -134,6 +143,17 @@ export default function TechPartners() {
         t("partners.twelvedata.feature4"),
       ],
     },
+    {
+      logo: <SaxoLogo className="h-10" />,
+      name: "Saxo Bank",
+      description: t("partners.saxo.desc"),
+      features: [
+        t("partners.saxo.feature1"),
+        t("partners.saxo.feature2"),
+        t("partners.saxo.feature3"),
+        t("partners.saxo.feature4"),
+      ],
+    },
   ];
 
   return (
@@ -153,7 +173,7 @@ export default function TechPartners() {
         </div>
 
         {/* Partner Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
           {partners.map((partner, index) => (
             <PartnerCard key={index} {...partner} />
           ))}
@@ -183,7 +203,7 @@ export default function TechPartners() {
             </div>
 
             {/* API Layer */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
               <div className="bg-primary/5 rounded-xl p-4 md:p-5 text-center border border-primary/20 hover:bg-primary/10 transition-colors">
                 <div className="text-gray-800 font-semibold mb-1 md:mb-2 text-sm md:text-base">Nium API</div>
                 <div className="text-xs text-gray-600">{t("partners.arch.niumApi")}</div>
@@ -195,6 +215,10 @@ export default function TechPartners() {
               <div className="bg-primary/5 rounded-xl p-4 md:p-5 text-center border border-primary/20 hover:bg-primary/10 transition-colors">
                 <div className="text-gray-800 font-semibold mb-1 md:mb-2 text-sm md:text-base">Twelve Data API</div>
                 <div className="text-xs text-gray-600">{t("partners.arch.twelvedataApi")}</div>
+              </div>
+              <div className="bg-primary/5 rounded-xl p-4 md:p-5 text-center border border-primary/20 hover:bg-primary/10 transition-colors">
+                <div className="text-gray-800 font-semibold mb-1 md:mb-2 text-sm md:text-base">Saxo API</div>
+                <div className="text-xs text-gray-600">{t("partners.arch.saxoApi")}</div>
               </div>
             </div>
           </div>

@@ -1,69 +1,105 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, EffectCoverflow } from "swiper/modules";
-import type { Swiper as SwiperType } from "swiper";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { COMPANY } from "@/constants/company";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css/effect-coverflow";
-
-type GalleryItem = {
-  type: "image" | "video";
-  src: string;
-  alt?: string;
-  poster?: string;
-};
-
-// Gallery items - add more images/videos here
-const galleryItems: GalleryItem[] = [
-  {
-    type: "video",
-    src: "/grok-video.mp4",
-  },
-  // Images temporarily disabled - need versions without background
-  // {
-  //   type: "image",
-  //   src: "/Gemini_Generated_Image_cqpug7cqpug7cqpu.png",
-  //   alt: "NeoNeo Bank App - Dashboard",
-  // },
-  // {
-  //   type: "image",
-  //   src: "/Gemini_Generated_Image_gvsckcgvsckcgvsc.png",
-  //   alt: "NeoNeo Bank App - Features",
-  // },
-  // {
-  //   type: "image",
-  //   src: "/Gemini_Generated_Image_duupggduupggduup.png",
-  //   alt: "NeoNeo Bank App - Transactions",
-  // },
+// iPhone Screenshots für den Mockup-Rahmen
+const IPHONE_SCREENSHOTS = [
+  { src: "/home.png", alt: `${COMPANY.tradingAs} App - Home` },
+  { src: "/transfer.png", alt: `${COMPANY.tradingAs} App - Überweisungen` },
+  { src: "/currencys.png", alt: `${COMPANY.tradingAs} App - Währungen` },
+  { src: "/investments.png", alt: `${COMPANY.tradingAs} App - Investments` },
+  { src: "/support.png", alt: `${COMPANY.tradingAs} App - Support` },
 ];
+
+const AUTO_SLIDE_INTERVAL = 4000;
 
 export default function Hero() {
   const { t } = useLanguage();
-  const [activeIndex, setActiveIndex] = useState(0);
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const handleSlideChange = (swiper: SwiperType) => {
-    setActiveIndex(swiper.activeIndex);
+  // Video ended state - wenn true, zeige Screenshots
+  const [videoEnded, setVideoEnded] = useState(false);
 
-    // Handle video playback when sliding
-    videoRefs.current.forEach((video, index) => {
-      if (video) {
-        if (index === swiper.activeIndex) {
-          // Auto-play video when it becomes active
-          video.play();
-        } else {
-          video.pause();
-        }
+  // iPhone Screenshot Slider State
+  const [currentScreenshot, setCurrentScreenshot] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const minSwipeDistance = 50;
+
+  const goToSlide = useCallback((index: number) => {
+    setCurrentScreenshot(index);
+  }, []);
+
+  const goToNext = useCallback(() => {
+    setCurrentScreenshot((prev) => (prev + 1) % IPHONE_SCREENSHOTS.length);
+  }, []);
+
+  const goToPrev = useCallback(() => {
+    setCurrentScreenshot((prev) => (prev - 1 + IPHONE_SCREENSHOTS.length) % IPHONE_SCREENSHOTS.length);
+  }, []);
+
+  const resetInterval = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    intervalRef.current = setInterval(goToNext, AUTO_SLIDE_INTERVAL);
+  }, [goToNext]);
+
+  // Starte Auto-Slide nur wenn Video beendet ist
+  useEffect(() => {
+    if (videoEnded) {
+      intervalRef.current = setInterval(goToNext, AUTO_SLIDE_INTERVAL);
+    }
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
       }
-    });
+    };
+  }, [goToNext, videoEnded]);
+
+  // Video ended handler
+  const handleVideoEnded = useCallback(() => {
+    setVideoEnded(true);
+  }, []);
+
+  // Video erneut abspielen
+  const replayVideo = useCallback(() => {
+    if (videoRef.current) {
+      setVideoEnded(false);
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+    }
+    // Auto-slide stoppen während Video läuft
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+  }, []);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isSwipe = Math.abs(distance) > minSwipeDistance;
+    if (isSwipe) {
+      if (distance > 0) {
+        goToNext();
+      } else {
+        goToPrev();
+      }
+      resetInterval();
+    }
   };
 
   return (
@@ -91,116 +127,110 @@ export default function Hero() {
           {t("hero.tagline")}
         </p>
 
-        {/* Swipeable Gallery */}
-        <div className="relative mx-auto w-full max-w-md md:max-w-lg lg:max-w-xl">
-          <Swiper
-            modules={[Pagination, Navigation, EffectCoverflow]}
-            effect="coverflow"
-            grabCursor={true}
-            centeredSlides={true}
-            slidesPerView={1}
-            spaceBetween={0}
-            speed={600}
-            coverflowEffect={{
-              rotate: 0,
-              stretch: 0,
-              depth: 100,
-              modifier: 1,
-              slideShadows: false,
-            }}
-            pagination={{
-              clickable: true,
-              dynamicBullets: true,
-            }}
-            navigation={{
-              nextEl: ".swiper-button-next-custom",
-              prevEl: ".swiper-button-prev-custom",
-            }}
-            onSlideChange={handleSlideChange}
-            className="hero-swiper"
-          >
-            {galleryItems.map((item, index) => (
-              <SwiperSlide key={index} className="flex items-center justify-center">
-                <div className="relative mx-auto w-64 sm:w-72 md:w-80 lg:w-96">
-                  {item.type === "video" ? (
-                    <div className="relative overflow-hidden bg-white">
-                      <video
-                        ref={(el) => { videoRefs.current[index] = el; }}
-                        src={item.src}
-                        className="w-full h-auto block"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="auto"
-                      >
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                  ) : (
-                    <Image
-                      src={item.src}
-                      alt={item.alt || `${COMPANY.tradingAs} App`}
-                      width={400}
-                      height={800}
-                      className="drop-shadow-2xl w-full h-auto"
-                      priority={index === 0}
-                      sizes="(max-width: 640px) 256px, (max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
-                    />
-                  )}
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          {/* Custom Navigation Arrows */}
-          {galleryItems.length > 1 && (
-            <>
-              <button
-                className="swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110 -ml-2 md:-ml-6"
-                aria-label="Previous slide"
+        {/* Video oder Screenshots - nur eines wird angezeigt */}
+        <div className="flex items-center justify-center">
+          <div className="relative w-64 sm:w-72 md:w-80">
+            {/* Video - ausgeblendet wenn beendet */}
+            <div
+              className={`transition-opacity duration-700 ${
+                videoEnded ? 'opacity-0 absolute inset-0 pointer-events-none' : 'opacity-100'
+              }`}
+            >
+              <video
+                ref={videoRef}
+                src="/grok-video.mp4"
+                className="w-full h-auto block"
+                autoPlay
+                muted
+                playsInline
+                preload="auto"
+                onEnded={handleVideoEnded}
               >
-                <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button
-                className="swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110 -mr-2 md:-mr-6"
-                aria-label="Next slide"
-              >
-                <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </>
-          )}
-
-          {/* Slide indicator */}
-          {galleryItems.length > 1 && (
-            <div className="mt-6 flex justify-center gap-2">
-              {galleryItems.map((item, index) => (
-                <div
-                  key={index}
-                  className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium transition-all ${
-                    activeIndex === index
-                      ? "bg-primary text-white"
-                      : "bg-gray-100 text-gray-500"
-                  }`}
-                >
-                  {item.type === "video" ? (
-                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  ) : (
-                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                  )}
-                  <span>{index + 1}</span>
-                </div>
-              ))}
+                Your browser does not support the video tag.
+              </video>
             </div>
-          )}
+
+            {/* iPhone Mockup mit Screenshots - eingeblendet nach Video */}
+            <div
+              className={`transition-opacity duration-700 ${
+                videoEnded ? 'opacity-100' : 'opacity-0 absolute inset-0 pointer-events-none'
+              }`}
+            >
+              {/* iPhone Rahmen */}
+              <div
+                className="bg-black border-[12px] border-gray-800 rounded-[45px] overflow-hidden shadow-2xl shadow-black/30"
+                onTouchStart={onTouchStart}
+                onTouchMove={onTouchMove}
+                onTouchEnd={onTouchEnd}
+              >
+                {/* Notch */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-2xl z-10" />
+
+                {/* Screenshot Container */}
+                <div className="relative w-full aspect-[9/19.5]">
+                  {IPHONE_SCREENSHOTS.map((screenshot, index) => (
+                    <div
+                      key={screenshot.src}
+                      className={`absolute inset-0 transition-opacity duration-500 ${
+                        index === currentScreenshot ? 'opacity-100' : 'opacity-0'
+                      }`}
+                    >
+                      <Image
+                        src={screenshot.src}
+                        alt={screenshot.alt}
+                        fill
+                        className="object-cover"
+                        priority={index === 0}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Thumbnail Galerie + Play Button */}
+              <div className="flex items-center justify-center gap-2 mt-6">
+                {/* Play Button für Video */}
+                <button
+                  onClick={replayVideo}
+                  className={`relative w-14 h-14 rounded-xl overflow-hidden border-2 border-gray-200 hover:border-primary transition-all duration-300 bg-gray-900 flex items-center justify-center group`}
+                  aria-label="Video abspielen"
+                >
+                  {/* Play Icon */}
+                  <svg
+                    className="w-6 h-6 text-white group-hover:scale-110 transition-transform"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+
+                {/* Screenshot Thumbnails */}
+                {IPHONE_SCREENSHOTS.map((screenshot, index) => (
+                  <button
+                    key={screenshot.src}
+                    onClick={() => {
+                      goToSlide(index);
+                      resetInterval();
+                    }}
+                    className={`relative w-14 h-14 rounded-xl overflow-hidden border-2 transition-all duration-300 ${
+                      index === currentScreenshot
+                        ? 'border-primary ring-2 ring-primary/30 scale-105'
+                        : 'border-gray-200 hover:border-gray-400'
+                    }`}
+                    aria-label={`Screenshot ${index + 1} anzeigen`}
+                  >
+                    <Image
+                      src={screenshot.src}
+                      alt={screenshot.alt}
+                      fill
+                      className="object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Coming Soon - App Store Buttons */}
@@ -243,33 +273,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Custom Swiper Styles */}
-      <style jsx global>{`
-        .hero-swiper {
-          padding-bottom: 40px;
-        }
-        .hero-swiper .swiper-wrapper {
-          transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-        }
-        .hero-swiper .swiper-slide {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: transform 0.5s ease, opacity 0.5s ease;
-        }
-        .hero-swiper .swiper-pagination-bullet {
-          background: #d1d5db;
-          opacity: 1;
-          width: 8px;
-          height: 8px;
-          transition: all 0.3s ease;
-        }
-        .hero-swiper .swiper-pagination-bullet-active {
-          background: #ff5d37;
-          width: 24px;
-          border-radius: 4px;
-        }
-      `}</style>
     </section>
   );
 }
