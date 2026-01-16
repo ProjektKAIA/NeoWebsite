@@ -228,7 +228,7 @@ export default function TechnologyPage() {
               </div>
 
               {/* Partner APIs */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="bg-white rounded-xl p-5 border-2 border-blue-200 text-center hover:border-blue-400 transition-colors">
                   <div className="font-semibold text-gray-900 mb-1">Nium API</div>
                   <div className="text-xs text-gray-500">{language === "de" ? "IBAN, Karten, Zahlungen" : "IBAN, Cards, Payments"}</div>

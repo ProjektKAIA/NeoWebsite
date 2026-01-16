@@ -173,7 +173,7 @@ export default function TechPartners() {
         </div>
 
         {/* Partner Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
           {partners.map((partner, index) => (
             <PartnerCard key={index} {...partner} />
           ))}
@@ -203,7 +203,7 @@ export default function TechPartners() {
             </div>
 
             {/* API Layer */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
               <div className="bg-primary/5 rounded-xl p-4 md:p-5 text-center border border-primary/20 hover:bg-primary/10 transition-colors">
                 <div className="text-gray-800 font-semibold mb-1 md:mb-2 text-sm md:text-base">Nium API</div>
                 <div className="text-xs text-gray-600">{t("partners.arch.niumApi")}</div>
