@@ -8,7 +8,7 @@ import { COMPANY } from "@/constants/company";
 // iPhone Screenshots für den Mockup-Rahmen
 const IPHONE_SCREENSHOTS = [
   { src: "/home.png", alt: `${COMPANY.tradingAs} App - Home` },
-  { src: "/transfer.png", alt: `${COMPANY.tradingAs} App - Überweisungen` },
+  { src: "/transfers.png", alt: `${COMPANY.tradingAs} App - Überweisungen` },
   { src: "/currencys.png", alt: `${COMPANY.tradingAs} App - Währungen` },
   { src: "/investments.png", alt: `${COMPANY.tradingAs} App - Investments` },
   { src: "/support.png", alt: `${COMPANY.tradingAs} App - Support` },
@@ -163,9 +163,7 @@ export default function Hero() {
                 onTouchMove={onTouchMove}
                 onTouchEnd={onTouchEnd}
               >
-                {/* Notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-2xl z-10" />
-
+  
                 {/* Screenshot Container */}
                 <div className="relative w-full aspect-[9/19.5]">
                   {IPHONE_SCREENSHOTS.map((screenshot, index) => (
