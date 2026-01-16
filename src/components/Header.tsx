@@ -195,7 +195,7 @@ export default function Header() {
           {/* Logo with Ring */}
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt={`${COMPANY.tradingAs} Logo`}
               width={48}
               height={48}
