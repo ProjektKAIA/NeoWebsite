@@ -19,12 +19,12 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://neoneobank.com"),
-  title: "NeoNeo Bank - The Next-Gen Mobile Bank",
+  title: "NEONEO Bank - The Next-Gen Mobile Bank",
   description: "The operating system for modern money. Banking, crypto, investments and payments — all in one app.",
   keywords: ["neobank", "digital bank", "crypto", "investments", "mobile banking", "fintech", "digital wallet", "IBAN", "SEPA", "VISA"],
-  authors: [{ name: "NeoNeo Bank" }],
-  creator: "NeoNeo Bank",
-  publisher: "NeoNeo Bank",
+  authors: [{ name: "NEONEO Bank" }],
+  creator: "NEONEO Bank",
+  publisher: "NEONEO Bank",
   robots: {
     index: true,
     follow: true,
@@ -37,23 +37,23 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "NeoNeo Bank - The Next-Gen Mobile Bank",
+    title: "NEONEO Bank - The Next-Gen Mobile Bank",
     description: "The operating system for modern money. Banking, crypto, investments and payments — all in one app.",
     type: "website",
     locale: "de_DE",
-    siteName: "NeoNeo Bank",
+    siteName: "NEONEO Bank",
     images: [
       {
         url: "/app-mockup.png",
         width: 400,
         height: 800,
-        alt: "NeoNeo Bank App",
+        alt: "NEONEO Bank App",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "NeoNeo Bank - The Next-Gen Mobile Bank",
+    title: "NEONEO Bank - The Next-Gen Mobile Bank",
     description: "The operating system for modern money. Banking, crypto, investments and payments — all in one app",
     images: ["/app-mockup.png"],
   },

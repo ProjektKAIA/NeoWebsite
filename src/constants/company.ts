@@ -6,7 +6,7 @@ export const COMPANY = {
   name: "NEONEO HOLDINGS LTD",
 
   // Trading name / Brand
-  tradingAs: "NeoNeo Bank",
+  tradingAs: "NEONEO Bank",
 
   // Company registration
   companyNumber: "16121231",
@@ -24,7 +24,7 @@ export const COMPANY = {
 
   // Contact information
   contact: {
-    email: "hello@neoneobank.de",
+    email: "hello@neoneobank.com",
     website: "neoneobank.com",
   },
 

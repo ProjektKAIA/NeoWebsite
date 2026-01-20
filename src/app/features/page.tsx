@@ -125,7 +125,7 @@ export default function FeaturesPage() {
       features: [
         {
           title: "In-App Chat",
-          desc: "Chatte mit Freunden direkt in der NeoNeo App.",
+          desc: "Chatte mit Freunden direkt in der NEONEO App.",
           icon: MessageCircle
         },
         {
@@ -288,7 +288,7 @@ export default function FeaturesPage() {
       features: [
         {
           title: "In-App Chat",
-          desc: "Chat with friends directly in the NeoNeo app.",
+          desc: "Chat with friends directly in the NEONEO app.",
           icon: MessageCircle
         },
         {

@@ -186,7 +186,7 @@ export default function TechPartners() {
           </h3>
 
           <div className="max-w-4xl mx-auto">
-            {/* NeoNeo Bank App Layer */}
+            {/* NEONEO Bank App Layer */}
             <div className="bg-gradient-to-r from-primary to-primary/80 rounded-xl md:rounded-2xl p-4 md:p-6 text-white text-center mb-4 md:mb-6">
               <div className="text-base md:text-lg font-semibold mb-2">{COMPANY.tradingAs} App</div>
               <div className="flex flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-sm opacity-90">
