@@ -19,8 +19,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://neoneobank.com"),
-  title: "NEONEO Bank - The Next-Gen Mobile Bank",
-  description: "The operating system for modern money. Banking, crypto, investments and payments — all in one app.",
+  title: "NEONEO Bank – Projekt eingestellt",
+  description: "Dieses Projekt wurde eingestellt.",
   keywords: ["neobank", "digital bank", "crypto", "investments", "mobile banking", "fintech", "digital wallet", "IBAN", "SEPA", "VISA"],
   authors: [{ name: "NEONEO Bank" }],
   creator: "NEONEO Bank",
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "NEONEO Bank - The Next-Gen Mobile Bank",
-    description: "The operating system for modern money. Banking, crypto, investments and payments — all in one app.",
+    title: "NEONEO Bank – Projekt eingestellt",
+    description: "Dieses Projekt wurde eingestellt.",
     type: "website",
     locale: "de_DE",
     siteName: "NEONEO Bank",
@@ -53,8 +53,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NEONEO Bank - The Next-Gen Mobile Bank",
-    description: "The operating system for modern money. Banking, crypto, investments and payments — all in one app",
+    title: "NEONEO Bank – Projekt eingestellt",
+    description: "Dieses Projekt wurde eingestellt.",
     images: ["/app-mockup.png"],
   },
   icons: {
@@ -72,7 +72,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="de" className={inter.variable}>
       <body className={`${inter.className} antialiased`}>
         <LanguageProvider>
           {children}
